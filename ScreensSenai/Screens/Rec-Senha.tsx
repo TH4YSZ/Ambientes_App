@@ -1,6 +1,6 @@
 import { View, Text } from 'react-native';
 import Header from '../components/Header';
-import Input from '../components/Input';
+import { InputSenha, InputEmail } from '../components/Input';
 import React from 'react';
 
 function RecSenha(){
@@ -9,7 +9,7 @@ function RecSenha(){
             <Header/>
             <View>
                 <Text>Insira seu e-mail para recuperar a senha!</Text>
-                <Input/>
+                <InputSenha/>
             </View>
         </View>
     )

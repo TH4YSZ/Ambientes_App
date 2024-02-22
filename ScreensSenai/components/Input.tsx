@@ -3,6 +3,7 @@ import { TextInput, StyleSheet, Text, View } from 'react-native';
 
 function InputSenha(){
     const [senha, setSenha] = useState("")
+    
     return(
         <View>
             <Text style={styles.senha}>Senha:</Text>
@@ -18,7 +19,20 @@ function InputSenha(){
     )
 }
 
-function 
+function InputEmail(){
+    const [email, setEmail] = useState("")
+    return(
+        <View>
+            <Text style={styles.email}>Email:</Text>
+            <TextInput
+                style={styles.input}
+                onChangeText={(text) => setEmail(text)}
+                value={email}
+                placeholder="Digite seu email:"
+            />
+        </View>
+    )
+}
 
 
 const styles = StyleSheet.create({
@@ -34,8 +48,12 @@ const styles = StyleSheet.create({
       fontFamily: 'Roboto',
       borderBottomWidth: 1,
       borderColor: "gray",
-  
-    }
+    },
+    email:{
+        fontSize: 16,
+        color: '#242323',
+        paddingBottom: 10
+      },
   
   })
-export default InputSenha
+export {InputSenha, InputEmail}
