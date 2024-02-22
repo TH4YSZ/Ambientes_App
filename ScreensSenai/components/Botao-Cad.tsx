@@ -5,7 +5,7 @@ function BotaoCad(){
     return(
         <View>
             <TouchableOpacity style={styles.button}>
-                <Text style={styles.textButton}>Acessar</Text>
+                <Text style={styles.textButton}>Cadastre-se</Text>
             </TouchableOpacity>
         </View>
     )
