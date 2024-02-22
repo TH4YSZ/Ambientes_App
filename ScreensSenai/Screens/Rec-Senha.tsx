@@ -1,22 +1,20 @@
 import { View, Text } from 'react-native';
 import Header from '../components/Header';
-import { InputSenha, InputEmail } from '../components/Input';
+import { InputEmail } from '../components/Input';
+import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 
 function RecSenha(){
     return(
         <View>
+            <StatusBar style="light"/>
             <Header/>
             <View>
                 <Text>Insira seu e-mail para recuperar a senha!</Text>
-                <InputSenha/>
+                <InputEmail/>
             </View>
         </View>
     )
 }
-
-// const styles = StyleSheet.create({
-    
-// })
 
 export default RecSenha

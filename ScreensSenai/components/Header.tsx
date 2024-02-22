@@ -5,7 +5,6 @@ import React from 'react';
 function Header(){
     return (
         <View style={styles.header}>
-            <StatusBar style="light"/>
             <Image style={styles.logo} source={require('../assets/LogoSenai.png')}></Image>
             <Text style={styles.text}>Recuperação de senha</Text>
         </View>
