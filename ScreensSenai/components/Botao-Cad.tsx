@@ -19,10 +19,13 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 20
+        padding: 10,
+        gap: 10
     },
     textButton:{
-        fontSize: 20,
+        fontSize: 14,
         color: '#fff',
     },
 })
+
+export default BotaoCad
