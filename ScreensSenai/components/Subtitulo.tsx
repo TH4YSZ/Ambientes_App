@@ -11,7 +11,9 @@ function Subtitulo({subtitulo}){
 const styles = StyleSheet.create({
     subtitulo:{
         fontWeight: '500',
-        fontSize: 20
+        fontSize: 20,
+        textAlign: "center",
+        marginBottom: 45
     }
 })
 

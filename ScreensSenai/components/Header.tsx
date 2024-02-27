@@ -17,6 +17,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Roboto',
     height: 200,
     justifyContent: "center",
+    borderRadius: 5,
   },
   logo:{
     width: 181,

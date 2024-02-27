@@ -20,14 +20,16 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 16,
     color: '#242323',
-    paddingTop: 45,
+
   },
   input: {
     height: 40,
-    marginBottom: 20,
-    fontFamily: 'Roboto',
-    borderBottomWidth: 1,
-    borderColor: 'gray',
+    marginTop: 15,
+    marginBottom:30,
+    fontFamily: 'Inter',
+    borderRadius: 5,
+    padding: 10,
+    backgroundColor: '#F5F5F5'
   },
 });
 

@@ -1,11 +1,11 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+import { useState } from 'react';
 import Header from '../components/Header';
 import Input from '../components/Input';
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { useState } from 'react';
 import BotaoCad from '../components/Botao-Cad';
 import Subtitulo from '../components/Subtitulo'
+
 
 function RecSenha(){
     const [email, setEmail] = useState('');
@@ -16,7 +16,7 @@ function RecSenha(){
 
             <Header titulo="Recuperação de senha" cor="#011E83"/>
             <View style={styles.form}>
-                <Subtitulo subtitulo="Insira seu e-mail para recuperar a senha!"/>
+                <Subtitulo subtitulo="Insira seu e-mail para recuperar                      a senha!"/>
                 <Input label="Email" onChangeText={setEmail} value={email} placeholder={"Insira seu email:"} secureTextEntry={false} />
                 <BotaoCad/>            
             </View>
@@ -31,6 +31,5 @@ const styles = StyleSheet.create({
         marginTop: 45,
         marginHorizontal: 20
     },
-
 })
 export default RecSenha
