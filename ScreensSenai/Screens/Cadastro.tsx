@@ -28,9 +28,6 @@ function Cadastro(){
                 <Input label="Telefone" onChangeText={setTelefone} value={telefone} placeholder={"Insira seu telefone:"} secureTextEntry={false} />
                 <Input label="Senha" onChangeText={setSenha} value={senha} placeholder={"Insira sua senha:"} secureTextEntry={true} />
                 <Input label="Confirmar Senha" onChangeText={setConfSenha} value={confSenha} placeholder={"Insira sua senha:"} secureTextEntry={true} />
-
-                
-                
                 <BotaoCad/>            
             </View>
         </ScrollView>
