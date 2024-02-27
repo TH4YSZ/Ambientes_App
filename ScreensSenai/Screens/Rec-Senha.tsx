@@ -1,17 +1,21 @@
 import { View, Text } from 'react-native';
 import Header from '../components/Header';
-import { InputEmail } from '../components/Input';
+import Input from '../components/Input';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
+import { useState } from 'react';
 
 function RecSenha(){
+    const [email, setEmail] = useState('');
     return(
+        
         <View>
             <StatusBar style="light"/>
             <Header/>
             <View>
                 <Text>Insira seu e-mail para recuperar a senha!</Text>
-                <InputEmail/>
+                <Input label="Insira seu e-mail para recuperar a senha:" onChangeText={setEmail} value={email} placeholder={"Insira seu email:"} secureTextEntry={false} />
+
             </View>
         </View>
     )
