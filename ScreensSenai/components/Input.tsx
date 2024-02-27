@@ -1,4 +1,4 @@
-import { View, Text, TextInput } from 'react-native';
+import { View, Text, TextInput, StyleSheet } from 'react-native';
 
 
 function Input({ label, placeholder, secureTextEntry, onChangeText, value }) {
@@ -16,7 +16,7 @@ function Input({ label, placeholder, secureTextEntry, onChangeText, value }) {
   );
 }
 
-const styles = {
+const styles = StyleSheet.create({
   label: {
     fontSize: 16,
     color: '#242323',
@@ -30,7 +30,7 @@ const styles = {
     borderBottomWidth: 1,
     borderColor: 'gray',
   },
-};
+});
 
 
 export default Input;

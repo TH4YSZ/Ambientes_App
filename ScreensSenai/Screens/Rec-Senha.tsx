@@ -22,4 +22,5 @@ function RecSenha(){
     )
 }
 
+
 export default RecSenha
