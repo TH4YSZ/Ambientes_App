@@ -1,28 +1,26 @@
-import { View, Text, StyleSheet, Image, TouchableOpacity, TextInput} from "react-native"
-import { StatusBar } from 'expo-status-bar';
+import { View, Text, StyleSheet, Image} from "react-native"
 import React from 'react';
 
-function Header(){
+function Header({cor, titulo}){
     return (
-        <View style={styles.header}>
+        <View style={{...styles.container, backgroundColor: cor}}>
             <Image style={styles.logo} source={require('../assets/LogoSenai.png')}></Image>
-            <Text style={styles.text}>Recuperação de senha</Text>
+            <Text style={styles.text}>{titulo}</Text>
         </View>
         
     )
 }
 
-
 const styles = StyleSheet.create({
-  header:{
-    backgroundColor:'#011E83',
-    flex: 1,
+  container:{
     alignItems: 'center',
-    fontFamily: 'Roboto'
+    fontFamily: 'Roboto',
+    height: 200,
+    justifyContent: "center",
   },
   logo:{
-    width: 200,
-    height: 51.27,
+    width: 181,
+    height: 39,
     marginTop: 42,
     marginBottom: 20,
     marginHorizontal: 73,
@@ -30,7 +28,8 @@ const styles = StyleSheet.create({
   text:{
     fontSize: 20,
     color: '#fff',
-    marginBottom: 42
+    marginBottom: 42,
+    fontFamily: "Inter"
   },
 })
 

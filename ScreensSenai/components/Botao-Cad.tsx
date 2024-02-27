@@ -19,8 +19,7 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         justifyContent: 'center',
         alignItems: 'center',
-        padding: 10,
-        gap: 10
+        padding: 10
     },
     textButton:{
         fontSize: 14,
