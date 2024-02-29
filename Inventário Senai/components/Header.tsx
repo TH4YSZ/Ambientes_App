@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     fontFamily: 'Roboto',
     height: 200,
+    width: "100%",
     justifyContent: "center",
     borderRadius: 5,
   },

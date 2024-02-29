@@ -29,7 +29,8 @@ const styles = StyleSheet.create({
         backgroundColor: "#fff",
         height: 800,
         marginTop: 45,
-        marginHorizontal: 20
+        marginHorizontal: 20,
+        width: "100%",
     },
 })
 export default RecSenha
