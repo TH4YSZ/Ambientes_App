@@ -4,7 +4,7 @@ import React from 'react';
 function Header({cor, titulo}){
     return (
         <View style={{...styles.container, backgroundColor: cor}}>
-            <Image style={styles.logo} source={require('../assets/LogoSenai.png')}></Image>
+            <Image style={styles.logo} source={require('../assets/LogoSenai.png')}/>
             <Text style={styles.text}>{titulo}</Text>
         </View>
         
