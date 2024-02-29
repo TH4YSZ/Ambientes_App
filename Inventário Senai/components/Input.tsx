@@ -1,7 +1,14 @@
 import { View, Text, TextInput, StyleSheet } from 'react-native';
 
+type InputProps = {
+  label: string,
+  placeholder: string,
+  secureTextEntry: boolean,
+  onChangeText: any,
+  value: any
+}
 
-function Input({ label, placeholder, secureTextEntry, onChangeText, value }) {
+function Input({ label, placeholder, secureTextEntry, onChangeText, value }: InputProps) {
   return (
     <View>
       <Text style={styles.label}>{label}:</Text>

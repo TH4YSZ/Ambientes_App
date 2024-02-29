@@ -1,7 +1,12 @@
 import { View, Text, StyleSheet, Image} from "react-native"
 import React from 'react';
 
-function Header({cor, titulo}){
+type HeaderProps = {
+  titulo: string,
+  cor: string
+}
+
+function Header({cor, titulo}: HeaderProps){
     return (
         <View style={{...styles.container, backgroundColor: cor}}>
             <Image style={styles.logo} source={require('../assets/LogoSenai.png')}/>
@@ -18,19 +23,18 @@ const styles = StyleSheet.create({
     height: 200,
     width: "100%",
     justifyContent: "center",
-    borderRadius: 5,
+    borderBottomEndRadius: 5,
+    borderBottomStartRadius: 5,
+    gap: 10
   },
   logo:{
     width: 181,
     height: 39,
-    marginTop: 42,
-    marginBottom: 20,
     marginHorizontal: 73,
   },
   text:{
     fontSize: 20,
     color: '#fff',
-    marginBottom: 42,
     fontFamily: "Inter"
   },
 })
