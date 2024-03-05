@@ -9,7 +9,7 @@ function Inventarios(){
     return(
         <ScrollView>
             <StatusBar style="light"/>
-            <TopNav icon="menu" icon2="search" text='Lista'/>
+            <TopNav icon="menu" icon2="search" text='Lista' bgcolor="#fff" fontcolor="#666" iconcolor="#666"/>
             <Patrimonio id={956389} categoria="CADEIRA SENAI"/>
             <Patrimonio id={956389} categoria="CADEIRA SENAI"/>
             <Patrimonio id={956389} categoria="CADEIRA SENAI"/>
