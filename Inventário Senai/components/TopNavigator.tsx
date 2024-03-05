@@ -1,19 +1,20 @@
-import { View, StyleSheet  } from "react-native";
+import { View, Text, StyleSheet  } from "react-native";
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 
 
-function Nav({icon, icon2}){
+function TopNav({icon, icon2, text}){
     return(
-        <View style={styles.icons}>
-           <Ionicons name={icon} size={30} color={"#666666"}/> 
+        <View style={styles.nav}>
+           <Ionicons name={icon} size={30} color={"#666666"}/>
+           <Text>{text}</Text>
            <Ionicons name={icon2} size={30} color={"#666666"}/>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
-    icons:{
+    nav:{
         flexDirection: 'row',
         width: '100%',
         borderRadius: 5,
@@ -23,4 +24,4 @@ const styles = StyleSheet.create({
         backgroundColor: "#fff"
     }
 })
-export default Nav
+export default TopNav

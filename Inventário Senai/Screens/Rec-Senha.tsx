@@ -1,6 +1,5 @@
 import { View, StyleSheet } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import { useState } from 'react';
 import Header from '../components/Header';
 import Input from '../components/Input';
 import BotaoCad from '../components/Botao-Cad';
@@ -8,7 +7,6 @@ import Subtitulo from '../components/Subtitulo'
 
 
 function RecSenha(){
-    const [email, setEmail] = useState('');
     return(
         
         <View>
@@ -17,7 +15,7 @@ function RecSenha(){
             <Header titulo="Recuperação de senha" cor="#011E83"/>
             <View style={styles.form}>
                 <Subtitulo subtitulo="Insira seu e-mail para recuperar                      a senha!"/>
-                <Input label="Email" onChangeText={setEmail} value={email} placeholder={"Insira seu email:"} secureTextEntry={false} />
+                <Input label="Email" placeholder={"Insira seu email:"}/>
                 <BotaoCad/>            
             </View>
         </View>

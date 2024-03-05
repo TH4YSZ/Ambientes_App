@@ -1,23 +1,17 @@
-import { View, Text, TextInput, StyleSheet } from 'react-native';
+import { View, Text, TextInput, StyleSheet, TextInputProps } from 'react-native';
 
-type InputProps = {
-  label: string,
-  placeholder: string,
-  secureTextEntry: boolean,
-  onChangeText: any,
-  value: any
+interface InputProps extends TextInputProps{
+  label: string
 }
 
-function Input({ label, placeholder, secureTextEntry, onChangeText, value }: InputProps) {
+function Input({label, ...props}: InputProps) {
   return (
     <View>
       <Text style={styles.label}>{label}:</Text>
       <TextInput
         style={styles.input}
-        onChangeText={onChangeText}
-        value={value}
-        placeholder={placeholder}
-        secureTextEntry={secureTextEntry}
+        placeholderTextColor={'#595959'}
+        {...props}
       />
     </View>
   );
