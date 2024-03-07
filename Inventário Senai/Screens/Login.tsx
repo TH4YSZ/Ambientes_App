@@ -32,18 +32,17 @@ const styles = StyleSheet.create({
         backgroundColor: "#fff",
         height: 800,
         marginTop: 45,
-        marginHorizontal: 20,
+        paddingHorizontal: 20,
         width: "100%",
     },
     links: {
         fontSize: 14,
         flexDirection: 'row',
         justifyContent: 'space-between',
-        marginTop: 10,
+        marginTop: 10
     },
     text:{
         color: '#011E83',
-
     }
 })
 export default Login

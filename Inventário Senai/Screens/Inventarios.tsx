@@ -17,7 +17,7 @@ function Inventarios(){
             <Patrimonio id={956389} categoria="CADEIRA SENAI"/>
             <Patrimonio id={956389} categoria="CADEIRA SENAI"/>
             <Patrimonio id={956389} categoria="CADEIRA SENAI"/>
-            <Patrimonio id={956389} categoria="CADEIRA SENAI"/><Patrimonio id={956389} categoria="CADEIRA SENAI"/>
+            <Patrimonio id={956389} categoria="CADEIRA SENAI"/>
             <Patrimonio id={956389} categoria="CADEIRA SENAI"/>
             <Patrimonio id={956389} categoria="CADEIRA SENAI"/>
             <Patrimonio id={956389} categoria="CADEIRA SENAI"/>

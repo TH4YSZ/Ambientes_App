@@ -14,7 +14,7 @@ function RecSenha(){
 
             <Header titulo="Recuperação de senha" cor="#011E83"/>
             <View style={styles.form}>
-                <Subtitulo subtitulo="Insira seu e-mail para recuperar                      a senha!"/>
+                <Subtitulo subtitulo="Insira seu e-mail para recuperar a senha!"/>
                 <Input label="Email" placeholder={"Insira seu email:"}/>
                 <BotaoCad/>            
             </View>
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
         backgroundColor: "#fff",
         height: 800,
         marginTop: 45,
-        marginHorizontal: 20,
+        paddingHorizontal: 20,
         width: "100%",
     },
 })

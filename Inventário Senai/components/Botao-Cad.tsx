@@ -13,7 +13,6 @@ function BotaoCad(){
 const styles = StyleSheet.create({
     button:{
         backgroundColor: '#000',
-        width: 320,
         height: 47,
         borderRadius: 5,
         justifyContent: 'center',

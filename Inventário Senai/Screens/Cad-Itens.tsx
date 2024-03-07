@@ -2,7 +2,7 @@ import { View, StyleSheet } from "react-native"
 import TopNav from "../components/TopNavigator"
 import InputItem from "../components/Input-Item"
 
-function AddItems(){
+function CadItens(){
     return(
         <View>
             <TopNav icon="arrow-back" icon2="refresh-outline" text="Cadastro de itens" bgcolor="#FF0000" iconcolor="#fff" fontcolor="#fff"/>
@@ -21,7 +21,8 @@ function AddItems(){
 const styles = StyleSheet.create({
     container:{
         paddingVertical: 60,
-        paddingHorizontal: 20
+        paddingHorizontal: 20,
+        
     }
 })
-export default AddItems
+export default CadItens
