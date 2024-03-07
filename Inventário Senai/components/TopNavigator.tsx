@@ -6,7 +6,7 @@ function TopNav({icon, icon2, text, bgcolor, fontcolor, iconcolor}){
     return(
         <View style={{...styles.nav, backgroundColor: bgcolor}}>
            <Ionicons name={icon} size={30} color={iconcolor}/>
-           <Text style={{color: fontcolor, fontWeight: '600'}}>{text}</Text>
+           <Text style={{color: fontcolor, fontWeight: '600', fontSize: 16}}>{text}</Text>
            <Ionicons name={icon2} size={30} color={iconcolor}/>
         </View>
     )

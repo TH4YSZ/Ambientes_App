@@ -1,5 +1,4 @@
 import { View, StyleSheet, ScrollView } from 'react-native';
-import { StatusBar } from 'expo-status-bar';
 import Header from '../components/Header';
 import Input from '../components/Input';
 import BotaoCad from '../components/Botao-Cad';

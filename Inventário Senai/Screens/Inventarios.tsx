@@ -1,7 +1,6 @@
 import { ScrollView, StyleSheet, TouchableOpacity } from "react-native";
 import TopNav from "../components/TopNavigator";
 import Patrimonio from "../components/Patrimonio";
-import { StatusBar } from "expo-status-bar";
 import BottomNav from "../components/BottomNavigator";
 import { AntDesign } from '@expo/vector-icons';
 
