@@ -8,10 +8,7 @@ import Subtitulo from '../components/Subtitulo'
 
 function RecSenha(){
     return(
-        
         <View>
-            <StatusBar style="light"/>
-
             <Header titulo="Recuperação de senha" cor="#011E83"/>
             <View style={styles.form}>
                 <Subtitulo subtitulo="Insira seu e-mail para recuperar a senha!"/>

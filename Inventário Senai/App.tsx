@@ -3,11 +3,17 @@ import Login from './Screens/Login';
 import RecSenha from './Screens/Rec-Senha';
 import Inventarios from './Screens/Inventarios';
 import CadItens from './Screens/Cad-Itens';
+import { View } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 
 
 function App(){
    return(
-        <CadItens/>
+      <View>
+         <StatusBar style="light"/>
+         <Inventarios/>
+      </View>
+      
    )
 }
 

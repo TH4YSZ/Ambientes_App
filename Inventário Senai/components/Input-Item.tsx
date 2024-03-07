@@ -9,7 +9,7 @@ function InputItem({label, ...props}:InputItemProps){
     const [hover, setHover] = useState('#5D5C5C')
     const styles = StyleSheet.create({
       label: {
-        fontSize: 11,
+        fontSize: 14,
         color: '#000',
         fontWeight: '600',
     
@@ -24,12 +24,22 @@ function InputItem({label, ...props}:InputItemProps){
         borderColor: hover,
         borderWidth: 1
       },
+      textlabel:{
+        flexDirection: 'row',
+        backgroundColor: '#fff',
+
+      }
+
     });
 
 
     return(
         <View>
-            <Text style={styles.label}>{label} *</Text>
+            <View style={styles.textlabel}>
+              <Text style={styles.label}>{label}</Text>
+              <Text style={{color:"#FF0000"}}>*</Text>
+            </View>
+            
             <TextInput
                 style={styles.input} onFocus={()=>{
                   setHover('#F39200')

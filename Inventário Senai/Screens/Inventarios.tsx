@@ -8,8 +8,7 @@ import { AntDesign } from '@expo/vector-icons';
 function Inventarios(){
     return(
         <ScrollView>
-            <StatusBar style="light"/>
-            <TopNav icon="menu" icon2="search" text='Lista' bgcolor="#fff" fontcolor="#666" iconcolor="#666"/>
+            <TopNav icon="menu" icon2="search" text='Lista' bgcolor="#fff" fontcolor="#595959" iconcolor="#666"/>
             <Patrimonio id={956389} categoria="CADEIRA SENAI"/>
             <Patrimonio id={956389} categoria="CADEIRA SENAI"/>
             <Patrimonio id={956389} categoria="CADEIRA SENAI"/>
@@ -24,7 +23,7 @@ function Inventarios(){
             <Patrimonio id={956389} categoria="CADEIRA SENAI"/>
             <Patrimonio id={956389} categoria="CADEIRA SENAI"/>
             <Patrimonio id={956389} categoria="CADEIRA SENAI"/>
-            <BottomNav icon="camera-reverse" icon2="menu"/>
+            <BottomNav icon="camera-reverse" icon2="menu" iconcolor="#fff" bgcolor="#FF0000" bordercolor='#FF0000'/>
             <TouchableOpacity style={styles.buttomplus}>
                 <AntDesign name="pluscircle" size={50} color="#FF0000" />
             </TouchableOpacity>

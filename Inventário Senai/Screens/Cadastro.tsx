@@ -8,10 +8,7 @@ import BotaoCad from '../components/Botao-Cad';
 
 function Cadastro(){
     return(
-        
         <ScrollView>
-            <StatusBar style="light"/>
-
             <Header titulo="Cadastre-se" cor="#FF0000"/>
             <View style={styles.form}>
                 <Input label="Nome" placeholder={"Insira seu nome:"} />

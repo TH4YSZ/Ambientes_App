@@ -8,10 +8,7 @@ import Subtitulo from '../components/Subtitulo'
 
 function Login(){
     return(
-        
         <View>
-            <StatusBar style="light"/>
-
             <Header titulo="Login" cor="#000"/>
             <View style={styles.form}>
                 <Subtitulo subtitulo="Faça Login para Acessar o Sistema!"/>

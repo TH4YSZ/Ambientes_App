@@ -1,25 +1,22 @@
 import { View, StyleSheet } from "react-native"
 import Ionicons from '@expo/vector-icons/Ionicons';
 
-function BottomNav({icon, icon2}){
+function BottomNav({icon, icon2, bgcolor, iconcolor, bordercolor}){
     return(
-        <View style={styles.bottomNav}>
-            <Ionicons style={styles.icon} name={icon} size={35} color={"#FFF"}/>
-            <Ionicons name={icon2} size={35} color={"#FFF"}/>
+        <View style={{...styles.bottomNav, backgroundColor: bgcolor, borderColor: bordercolor}}>
+            <Ionicons style={{paddingRight: 20}} name={icon} size={35} color={iconcolor}/>
+            <Ionicons name={icon2} size={35} color={iconcolor}/>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     bottomNav:{
-        backgroundColor: '#FF0000',
-        height: 60,
+        height: 80,
         alignItems: 'center',
         justifyContent: 'center',
-        flexDirection: 'row'
+        flexDirection: 'row',
+        borderTopWidth: 1
     },
-    icon:{
-        paddingRight: 20
-    }
 })
 export default BottomNav

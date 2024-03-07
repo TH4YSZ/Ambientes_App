@@ -6,8 +6,7 @@ function TopNav({icon, icon2, text, bgcolor, fontcolor, iconcolor}){
     return(
         <View style={{...styles.nav, backgroundColor: bgcolor}}>
            <Ionicons name={icon} size={30} color={iconcolor}/>
-           <Text style={fontcolor}>{text}</Text>
-         
+           <Text style={{color: fontcolor, fontWeight: '600'}}>{text}</Text>
            <Ionicons name={icon2} size={30} color={iconcolor}/>
         </View>
     )
@@ -19,10 +18,9 @@ const styles = StyleSheet.create({
         width: '100%',
         borderRadius: 5,
         justifyContent: 'space-between',
-        paddingVertical: 30,
+        height: 80,
         paddingHorizontal: 15,
-        backgroundColor: "#fff",
-        alignItems: 'center'
+        alignItems: 'center',
     },
 })
 export default TopNav
