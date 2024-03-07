@@ -5,7 +5,7 @@ import BottomNav from "../components/BottomNavigator"
 function Scanner(){
     return( 
         <ScrollView>
-            <TopNav icon="arrow-back" icon2="refresh-outline" text="Cadastro de itens" bgcolor="#FF0000" iconcolor="#fff" fontcolor="#fff"/>
+            <TopNav icon="arrow-back" icon2="refresh-outline" text="Scanner" bgcolor="#FF0000" iconcolor="#fff" fontcolor="#fff"/>
                 <View style={styles.container}>
                     <Image style={{width: 350, height: 350}} source={require('../assets/Scanner.png')}/>
                 </View>

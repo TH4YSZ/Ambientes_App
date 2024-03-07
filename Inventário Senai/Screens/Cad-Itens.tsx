@@ -6,7 +6,7 @@ import BottomNav from "../components/BottomNavigator"
 function CadItens(){
     return( 
         <ScrollView>
-            <TopNav icon="arrow-back" icon2="refresh-outline" text="Cadastro de itens" bgcolor="#FF0000" iconcolor="#fff" fontcolor="#fff"/>
+            <TopNav icon="arrow-back" icon2="add-circle-outline" text="Cadastro de itens" bgcolor="#FF0000" iconcolor="#fff" fontcolor="#fff"/>
                 <View style={styles.container}>
                     <InputItem label="N° do Inventário " />
                     <InputItem label="Descrição " />

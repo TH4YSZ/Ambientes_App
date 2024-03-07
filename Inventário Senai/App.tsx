@@ -14,7 +14,7 @@ function App(){
    return(
       <View>
          <StatusBar style="light"/>
-         <Scanner/>
+         <CadItens/>
       </View>
       
    )
