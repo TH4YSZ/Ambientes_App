@@ -14,7 +14,7 @@ function CadItens(){
                     <InputItem label="Responsável " />
                     <InputItem label="Data de registro " />
                 </View>
-                <BottomNav icon="camera-reverse" icon2="menu" iconcolor="#595959" bgcolor="#fff" bordercolor="CBCBCB"/>
+                <BottomNav icon="camera-reverse" icon2="menu" iconcolor="#595959" bgcolor="#fff" bordercolor="#CBCBCB"/>
             </ScrollView>
     )
 }
