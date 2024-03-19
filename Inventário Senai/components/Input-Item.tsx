@@ -3,11 +3,13 @@ import { View, Text, TextInput, StyleSheet, TextInputProps } from 'react-native'
 
 interface InputItemProps extends TextInputProps {
   label: string;
+  descInicial: string
 }
 
-function InputItem({ label, ...props }: InputItemProps) {
+function InputItem({ label, descInicial, ...props }: InputItemProps) {
   const [hover, setHover] = useState('#5D5C5C');
   const [textColor, setTextColor] = useState('#000');
+  const [desc, setDesc] = useState(descInicial || '')
 
   const styles = StyleSheet.create({
     label: {
@@ -16,7 +18,7 @@ function InputItem({ label, ...props }: InputItemProps) {
       fontWeight: '600',
     },
     input: {
-      height: 40,
+      height: 60,
       marginTop: 15,
       marginBottom: 30,
       borderRadius: 5,
@@ -50,6 +52,8 @@ function InputItem({ label, ...props }: InputItemProps) {
           setTextColor('#000');
         }}
         placeholderTextColor={'#595959'}
+        value={desc}
+        onChangeText={text => setDesc(text)}
         {...props}
       />
     </View>
