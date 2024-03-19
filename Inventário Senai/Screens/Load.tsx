@@ -5,7 +5,7 @@ function Load(){
         <View style={styles.container}>
             <Image style={styles.logo} source={require('../assets/LogoSenai.png')}/>
             <View style={[styles.indicator, styles.horizontal]}>
-                <ActivityIndicator size="large" color="#fff" />
+                <ActivityIndicator size={60} color="#fff" />
             </View>
         
         </View>
@@ -17,17 +17,16 @@ const styles = StyleSheet.create({
         width: '100%',
         height:'100%',
         backgroundColor: '#FF0000',
-        justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     logo:{
         width: 181,
         height: 39,
-        marginHorizontal: 73
     },
     indicator: {
-        flex:  1,
         justifyContent: 'center',
+        marginTop: 60
       },
     horizontal: {
         flexDirection: 'row',
