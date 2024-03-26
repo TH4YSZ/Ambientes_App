@@ -3,7 +3,9 @@ import Header from '../components/Header';
 import Input from '../components/Input';
 import Botao from '../components/Botao';
 import Subtitulo from '../components/Subtitulo'
+import LinkBtn from '../components/LinkBtn';
 import { Link } from 'expo-router';
+
 
 
 function Login(){
@@ -14,10 +16,8 @@ function Login(){
                 <Subtitulo subtitulo="Faça Login para Acessar o Sistema!"/>
                 <Input label="Email" placeholder='Insira seu email:'/>
                 <Input label="Senha" placeholder ={'Insira sua senha:'} secureTextEntry={true}/>
-                <Link href="/Inventarios" asChild>
-                    <Botao texto="Entrar" />
-                </Link>
-                
+                <LinkBtn title="Entrar" href="drawer"/>
+
                 <View style={styles.links}>
                     
                     <Link href="/Cadastro" asChild>

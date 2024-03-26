@@ -23,6 +23,10 @@ export default function Layout() {
             options={{
               statusBarColor: '#011E83'
             }}/>
+      <Stack.Screen name="drawer"
+            options={{
+              headerShown: false
+            }}/>
     </Stack>
   )
   

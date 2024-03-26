@@ -1,6 +1,6 @@
 import { View, StyleSheet, ScrollView, Image } from "react-native"
-import TopNav from "../components/TopNavigator"
-import BottomNav from "../components/BottomNavigator"
+import TopNav from "../../../components/TopNavigator"
+import BottomNav from "../../../components/BottomNavigator"
 
 function Scanner(){
     return( 
