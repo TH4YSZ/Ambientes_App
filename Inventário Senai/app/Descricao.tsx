@@ -2,6 +2,7 @@ import { View, StyleSheet, ScrollView, Text, TouchableOpacity } from "react-nati
 import TopNav from "../components/TopNavigator"
 import BottomNav from "../components/BottomNavigator"
 import { MaterialIcons } from '@expo/vector-icons';
+import { Link } from "expo-router";
 
 function Desc(){
     return( 
@@ -21,10 +22,12 @@ function Desc(){
                 </View>
                 <BottomNav icon="camera-reverse" icon2="menu" iconcolor="#595959" bgcolor="#fff" bordercolor="CBCBCB"/>
                 <TouchableOpacity style={styles.buttomedit}>
-                <View style={styles.editIconContainer}>
-                    <MaterialIcons name="edit" size={24} color="#fff" />
-                </View>
-            </TouchableOpacity>
+                    <Link href="Editar">
+                        <View style={styles.editIconContainer}>
+                            <MaterialIcons name="edit" size={24} color="#fff" />
+                        </View>
+                    </Link>  
+                </TouchableOpacity>
         </ScrollView>
     );
 }

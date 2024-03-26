@@ -1,15 +1,21 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, TouchableOpacity, TouchableOpacityProps } from "react-native";
+import { Link } from "expo-router";
 
-type PatrimonioProps = {
-    id: number,
+
+interface PatrimonioProps extends TouchableOpacityProps {
+    id2: number;
     categoria: string
 }
 
-function Patrimonio({id, categoria}: PatrimonioProps){
+function Patrimonio({id2, categoria, ...props}: PatrimonioProps){
     return(
         <View style={styles.patrimonio}>
-            <Text style={styles.id}>{id}</Text>
-            <Text style={styles.categoria}>{categoria}</Text>
+            <Link href="/Descricao" asChild>
+                <TouchableOpacity {...props}>
+                    <Text style={styles.id}>{id2}</Text>
+                    <Text style={styles.categoria}>{categoria}</Text>
+                </TouchableOpacity>
+            </Link>
         </View>
     )
     

@@ -1,13 +1,26 @@
-import { View, Text, StyleSheet  } from "react-native";
-import Ionicons from '@expo/vector-icons/Ionicons';
+import { View, Text, StyleSheet, TouchableOpacity, TouchableOpacityProps  } from "react-native";
+import Icon from "./Icon";
+import { Link } from "expo-router";
 
+interface TopNavProps extends TouchableOpacityProps {
+    icon: any;
+    icon2: any;
+    text: string;
+    bgcolor: string;
+    fontcolor: string;
+    iconcolor: string;
+}
 
-function TopNav({icon, icon2, text, bgcolor, fontcolor, iconcolor}){
+function TopNav({icon, icon2, text, bgcolor, fontcolor, iconcolor, ...props}:TopNavProps){
     return(
         <View style={{...styles.nav, backgroundColor: bgcolor}}>
-           <Ionicons name={icon} size={30} color={iconcolor}/>
+            <Link href="/Inventarios" asChild>
+                <TouchableOpacity {...props}>
+                    <Icon name={icon} color={iconcolor}/>
+                </TouchableOpacity>
+            </Link>
            <Text style={{color: fontcolor, fontWeight: '600', fontSize: 16}}>{text}</Text>
-           <Ionicons name={icon2} size={30} color={iconcolor}/>
+           <Icon name={icon2} color={iconcolor}/>
         </View>
     )
 }

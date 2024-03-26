@@ -1,8 +1,9 @@
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import Header from '../components/Header';
 import Input from '../components/Input';
-import BotaoCad from '../components/Botao-Cad';
+import Botao from '../components/Botao';
 import Subtitulo from '../components/Subtitulo'
+import { Link } from 'expo-router';
 
 
 function Login(){
@@ -13,10 +14,24 @@ function Login(){
                 <Subtitulo subtitulo="Faça Login para Acessar o Sistema!"/>
                 <Input label="Email" placeholder='Insira seu email:'/>
                 <Input label="Senha" placeholder ={'Insira sua senha:'} secureTextEntry={true}/>
-                <BotaoCad/>
+                <Link href="/Inventarios" asChild>
+                    <Botao texto="Entrar" />
+                </Link>
+                
                 <View style={styles.links}>
-                    <Text style={styles.text}>Cadastre-se</Text>
-                    <Text style={styles.text}>Esqueceu a senha?</Text>  
+                    
+                    <Link href="/Cadastro" asChild>
+                        <TouchableOpacity>
+                            <Text style={styles.text}>Cadastre-se</Text>
+                        </TouchableOpacity>
+                    </Link>
+
+                    <Link href="/Rec-Senha" asChild>
+                        <TouchableOpacity>
+                            <Text style ={styles.text}>Esqueceu a senha?</Text>  
+                        </TouchableOpacity>
+                    </Link>
+                    
                 </View>         
             </View>
         </View>

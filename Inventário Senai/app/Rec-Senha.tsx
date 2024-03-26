@@ -1,8 +1,9 @@
 import { View, StyleSheet } from 'react-native';
 import Header from '../components/Header';
 import Input from '../components/Input';
-import BotaoCad from '../components/Botao-Cad';
-import Subtitulo from '../components/Subtitulo'
+import Botao from '../components/Botao';
+import Subtitulo from '../components/Subtitulo';
+import { Link } from 'expo-router';
 
 
 function RecSenha(){
@@ -12,7 +13,10 @@ function RecSenha(){
             <View style={styles.form}>
                 <Subtitulo subtitulo="Insira seu e-mail para recuperar a senha!"/>
                 <Input label="Email" placeholder={"Insira seu email:"}/>
-                <BotaoCad/>            
+                <Link href="/Cadastro" asChild>
+                    <Botao texto="Cadastre-se"/> 
+                </Link>
+                
             </View>
         </View>
     )

@@ -1,7 +1,8 @@
 import { View, StyleSheet, ScrollView } from 'react-native';
 import Header from '../components/Header';
 import Input from '../components/Input';
-import BotaoCad from '../components/Botao-Cad';
+import Botao from '../components/Botao';
+import { Link } from 'expo-router';
 
 
 
@@ -16,7 +17,10 @@ function Cadastro(){
                 <Input label="Telefone" placeholder={"Insira seu telefone:"}/>
                 <Input label="Senha" placeholder={"Insira sua senha:"} secureTextEntry={true} />
                 <Input label="Confirmar Senha" placeholder={"Insira sua senha:"} secureTextEntry={true} />
-                <BotaoCad/>            
+                <Link href="/index" asChild>
+                    <Botao texto="Cadastre-se"/> 
+                </Link>
+                           
             </View>
         </ScrollView>
     )

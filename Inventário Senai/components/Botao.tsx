@@ -1,10 +1,14 @@
-import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet, TouchableOpacityProps } from "react-native";
 
-function BotaoCad(){
+interface BotaoProps extends TouchableOpacityProps {
+    texto: string;
+  }
+
+function Botao({texto, ...props}:BotaoProps){
     return(
         <View>
-            <TouchableOpacity style={styles.button}>
-                <Text style={styles.textButton}>Cadastre-se</Text>
+            <TouchableOpacity {...props} style={styles.button}>
+                <Text  style={styles.textButton}>{texto}</Text>
             </TouchableOpacity>
         </View>
     )
@@ -25,4 +29,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default BotaoCad
+export default Botao
