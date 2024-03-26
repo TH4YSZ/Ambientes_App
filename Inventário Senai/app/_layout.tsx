@@ -5,8 +5,7 @@ export default function Layout() {
     <Stack screenOptions={{
         headerTransparent: true,
         headerTintColor: 'white',
-        headerTitle: "",
-        statusBarStyle: 'light'
+        headerTitle: ""
     }}>
 
       <Stack.Screen name="index"
@@ -25,7 +24,8 @@ export default function Layout() {
             }}/>
       <Stack.Screen name="drawer"
             options={{
-              headerShown: false
+              headerShown: false,
+              statusBarTranslucent: true
             }}/>
     </Stack>
   )

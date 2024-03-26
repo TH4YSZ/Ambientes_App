@@ -8,7 +8,7 @@ import { Link } from "expo-router";
 function Inventarios(){
     return(
         <ScrollView>
-            <TopNav icon="menu" icon2="search" text='Lista' bgcolor="#fff" fontcolor="#595959" iconcolor="#666"/>
+            {/* <TopNav icon="menu" icon2="search" text='Lista' bgcolor="#fff" fontcolor="#595959" iconcolor="#666"/> */}
             <Patrimonio id2={956389} categoria="CADEIRA SENAI"/>
             <Patrimonio id2={956389} categoria="CADEIRA SENAI"/>
             <Patrimonio id2={956389} categoria="CADEIRA SENAI"/>
@@ -24,7 +24,7 @@ function Inventarios(){
             <Patrimonio id2={956389} categoria="CADEIRA SENAI"/>
             <Patrimonio id2={956389} categoria="CADEIRA SENAI"/>
             <Patrimonio id2={956389} categoria="CADEIRA SENAI"/>
-            <BottomNav icon="camera-reverse" icon2="menu" iconcolor="#fff" bgcolor="#FF0000" bordercolor='#FF0000'/>
+            {/* <BottomNav icon="camera-reverse" icon2="menu" iconcolor="#fff" bgcolor="#FF0000" bordercolor='#FF0000'/> */}
             
             <Link href="/Cad-Itens" asChild>
                 <TouchableOpacity style={styles.buttomplus}>
