@@ -1,7 +1,7 @@
 import { View, StyleSheet, ScrollView } from "react-native"
-import TopNav from "../components/TopNavigator"
-import InputItem from "../components/Input-Item"
-import BottomNav from "../components/BottomNavigator"
+import TopNav from "@components/TopNavigator"
+import InputItem from "@components/Input-Item"
+import BottomNav from "@components/BottomNavigator"
 
 function Editar(){
     return( 
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     container:{
         paddingVertical: 60,
         paddingHorizontal: 20,
-        height: 800
+        height: '100%',
     },
 })
 export default Editar

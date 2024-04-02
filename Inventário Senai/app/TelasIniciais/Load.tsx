@@ -3,7 +3,7 @@ import { View, StyleSheet, Image, ActivityIndicator} from "react-native"
 function Load(){
     return(
         <View style={styles.container}>
-            <Image style={styles.logo} source={require('../assets/LogoSenai.png')}/>
+            <Image style={styles.logo} source={require('@assets/LogoSenai.png')}/>
             <View style={[styles.indicator, styles.horizontal]}>
                 <ActivityIndicator size={60} color="#fff" />
             </View>

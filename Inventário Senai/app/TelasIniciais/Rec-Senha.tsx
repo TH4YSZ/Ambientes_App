@@ -1,8 +1,8 @@
 import { View, StyleSheet } from 'react-native';
-import Header from '../components/Header';
-import Input from '../components/Input';
-import Botao from '../components/Botao';
-import Subtitulo from '../components/Subtitulo';
+import Header from '@components/Header';
+import Input from '@components/Input';
+import Botao from '@components/Botao';
+import Subtitulo from '@components/Subtitulo';
 import { Link } from 'expo-router';
 
 
@@ -25,7 +25,7 @@ function RecSenha(){
 const styles = StyleSheet.create({
     form:{
         backgroundColor: "#fff",
-        height: 800,
+        height: '100%',
         marginTop: 45,
         paddingHorizontal: 20,
         width: "100%",

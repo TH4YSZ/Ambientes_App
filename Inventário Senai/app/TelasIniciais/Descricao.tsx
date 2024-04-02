@@ -1,6 +1,6 @@
 import { View, StyleSheet, ScrollView, Text, TouchableOpacity } from "react-native"
-import TopNav from "../components/TopNavigator"
-import BottomNav from "../components/BottomNavigator"
+import TopNav from "@components/TopNavigator"
+import BottomNav from "@components/BottomNavigator"
 import { MaterialIcons } from '@expo/vector-icons';
 import { Link } from "expo-router";
 
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     container: {
         paddingVertical: 60,
         paddingHorizontal: 20,
-        height: 800
+        height: '100%',
     },
     titulodesc: {
         fontWeight: '600',
