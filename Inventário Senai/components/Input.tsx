@@ -16,7 +16,6 @@ function Input({ label, ...props }: InputProps) {
       height: 40,
       marginTop: 15,
       marginBottom: 30,
-      fontFamily: 'Inter', 
       padding: 10,
       backgroundColor: '#F5F5F5',
       borderRadius: 5,
