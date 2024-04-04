@@ -15,10 +15,9 @@ export default function layout(){
         headerTitle: "",
         headerTransparent: true,
         headerTintColor: "#fff"
-      }}/> 
-      <Stack.Screen name='TelasIniciais/Inventarios' options={{
-        headerTitle: "",
-        headerTintColor: "#595959"
+      }}/>
+      <Stack.Screen name='TabNav' options={{
+        headerShown: false
       }}/> 
     </Stack>
   )

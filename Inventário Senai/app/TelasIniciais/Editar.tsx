@@ -1,7 +1,6 @@
 import { View, StyleSheet, ScrollView } from "react-native"
 import TopNav from "@components/TopNavigator"
 import InputItem from "@components/Input-Item"
-import BottomNav from "@components/BottomNavigator"
 
 function Editar(){
     return( 
@@ -14,7 +13,6 @@ function Editar(){
                     <InputItem label="Responsável " descInicial="CARLOS" />
                     <InputItem label="Data de registro " descInicial="05/03/2024" />
                 </View>
-                <BottomNav icon="camera-reverse" icon2="menu" iconcolor="#595959" bgcolor="#fff" bordercolor="#CBCBCB"/>
             </ScrollView>
     )
 }

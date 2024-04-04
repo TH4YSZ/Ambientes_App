@@ -16,7 +16,7 @@ function Login(){
                 <Subtitulo subtitulo="Faça Login para Acessar o Sistema!"/>
                 <Input label="Email" placeholder='Insira seu email:'/>
                 <Input label="Senha" placeholder ={'Insira sua senha:'} secureTextEntry={true}/>
-                <LinkBtn title="Entrar" href="/TelasIniciais/Inventarios"/>
+                <LinkBtn title="Entrar" href="TabNav"/>
 
                 <View style={styles.links}>
                     

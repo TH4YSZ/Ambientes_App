@@ -31,13 +31,14 @@ const styles = StyleSheet.create({
         color: '#595959'
     },
     patrimonio:{
-        borderColor: 'F5F5F5',
+        borderColor: '#F5F5F5',
         borderTopWidth: 1,
         gap: 10,
         paddingVertical: 10,
         paddingHorizontal: 20,
         width: '100%',
-        height: 66
+        height: 66,
+        backgroundColor: '#fff'
     }
 })
 

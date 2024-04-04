@@ -1,6 +1,5 @@
 import { View, StyleSheet, ScrollView, Text, TouchableOpacity } from "react-native"
 import TopNav from "@components/TopNavigator"
-import BottomNav from "@components/BottomNavigator"
 import { MaterialIcons } from '@expo/vector-icons';
 import { Link } from "expo-router";
 
@@ -20,7 +19,6 @@ function Desc(){
                     <Text style={styles.titulodesc}>Data de registro:</Text>
                     <Text style={styles.desc}>05/03/2024</Text>
                 </View>
-                <BottomNav icon="camera-reverse" icon2="menu" iconcolor="#595959" bgcolor="#fff" bordercolor="CBCBCB"/>
                 <TouchableOpacity style={styles.buttomedit}>
                     <Link href="Editar">
                         <View style={styles.editIconContainer}>
