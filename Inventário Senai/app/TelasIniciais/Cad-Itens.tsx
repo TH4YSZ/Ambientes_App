@@ -1,11 +1,10 @@
 import { View, StyleSheet, ScrollView } from "react-native"
-import TopNav from "@components/TopNavigator"
 import InputItem from "@components/Input-Item"
+import { useColor } from "../../temas/Temas"
 
 function CadItens(){
     return( 
-        <ScrollView>
-            <TopNav icon="arrow-back" icon2="add-circle-outline" text="Cadastro de itens" bgcolor="#FF0000" iconcolor="#fff" fontcolor="#fff"/>
+        <ScrollView style={styles.scrollview}>
                 <View style={styles.container}>
                     <InputItem label="N° do Inventário" descInicial="" />
                     <InputItem label="Descrição " descInicial=""/>
@@ -17,7 +16,11 @@ function CadItens(){
     )
 }
 
+const cores = useColor()
 const styles = StyleSheet.create({
+    scrollview:{
+        backgroundColor: cores.bgPrimary
+    },
     container:{
         paddingVertical: 60,
         paddingHorizontal: 20,
@@ -25,3 +28,5 @@ const styles = StyleSheet.create({
     },
 })
 export default CadItens
+
+// Implementar TabNav

@@ -11,11 +11,20 @@ export default function layout(){
         headerTransparent: true,
         headerTintColor: "#fff"
       }}/> 
+
       <Stack.Screen name='TelasIniciais/Cadastro' options={{
         headerTitle: "",
         headerTransparent: true,
         headerTintColor: "#fff"
       }}/>
+
+      <Stack.Screen name="TelasIniciais/Cad-Itens" options={{
+        headerTitle: "Cadastro de itens",
+        headerTintColor: "#fff",
+        headerStyle: { backgroundColor: "#FF0000" }
+        
+      }}/>
+
       <Stack.Screen name='TabNav' options={{
         headerShown: false
       }}/> 

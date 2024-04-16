@@ -8,10 +8,11 @@ type HeaderProps = {
 
 function Header({cor, titulo}: HeaderProps){
     return (
-        <View style={{...styles.container, backgroundColor: cor}}>
-            <Image style={styles.logo} source={require('@assets/LogoSenai.png')}/>
-            <Text style={styles.text}>{titulo}</Text>
-        </View>
+      
+      <View style={{...styles.container, backgroundColor: cor}}>
+          <Image style={styles.logo} source={require('@assets/LogoSenai.png')}/>
+          <Text style={styles.text}>{titulo}</Text>
+      </View>
         
     )
 }

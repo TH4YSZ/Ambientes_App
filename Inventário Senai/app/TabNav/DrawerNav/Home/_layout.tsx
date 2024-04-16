@@ -15,10 +15,11 @@ export default function layout(){
                 headerTitleAlign: 'center',
                 headerTitle: 'Lista',
                 headerTintColor: '#595959'
-
+            
             }}
             
             />
+            
         </Stack>
     )
 }

@@ -1,22 +1,16 @@
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import Header from '@components/Header';
 import Input from '@components/Input';
-import Botao from '@components/Botao';
 import Subtitulo from '@components/Subtitulo'
 import LinkBtn from '@components/LinkBtn';
 import { useColor } from '../../temas/Temas';
 import { Link } from 'expo-router';
 
 
-
-    const cores = useColor();
-
-  
-
 function Login(){
     return(
-        <View>
-            <Header titulo="Login" cor={cores.bgPrimary}/>
+        <View style={styles.container}>
+            <Header titulo="Login" cor={cores.loginHeader}/>
             <View style={styles.form}>
                 <Subtitulo subtitulo="Faça Login para Acessar o Sistema!"/>
                 <Input label="Email" placeholder='Insira seu email:'/>
@@ -39,9 +33,15 @@ function Login(){
     )
 }
 
+const cores = useColor()
+
 const styles = StyleSheet.create({
+    container:{
+        backgroundColor: cores.bgPrimary,
+        flex: 1
+    },
     form:{
-        backgroundColor: "#fff",
+        backgroundColor: cores.bgPrimary,
         height: '100%',
         marginTop: 45,
         paddingHorizontal: 20,
@@ -54,7 +54,9 @@ const styles = StyleSheet.create({
         marginTop: 10
     },
     text:{
-        color: '#011E83',
+        color: cores.colorLinks,
     }
 })
+
+
 export default Login
