@@ -4,34 +4,35 @@ import Input from '@components/Input';
 import Botao from '@components/Botao';
 import Subtitulo from '@components/Subtitulo'
 import LinkBtn from '@components/LinkBtn';
+import { useColor } from '../../temas/Temas';
 import { Link } from 'expo-router';
 
 
 
+    const cores = useColor();
+
+  
+
 function Login(){
     return(
         <View>
-            <Header titulo="Login" cor="#000"/>
+            <Header titulo="Login" cor={cores.bgPrimary}/>
             <View style={styles.form}>
                 <Subtitulo subtitulo="Faça Login para Acessar o Sistema!"/>
                 <Input label="Email" placeholder='Insira seu email:'/>
                 <Input label="Senha" placeholder ={'Insira sua senha:'} secureTextEntry={true}/>
                 <LinkBtn title="Entrar" href="TabNav"/>
-
                 <View style={styles.links}>
-                    
                     <Link href="/TelasIniciais/Cadastro" asChild>
                         <TouchableOpacity>
                             <Text style={styles.text}>Cadastre-se</Text>
                         </TouchableOpacity>
                     </Link>
-
                     <Link href="/TelasIniciais/Rec-Senha" asChild>
                         <TouchableOpacity>
                             <Text style ={styles.text}>Esqueceu a senha?</Text>  
                         </TouchableOpacity>
-                    </Link>
-                    
+                    </Link>   
                 </View>         
             </View>
         </View>
