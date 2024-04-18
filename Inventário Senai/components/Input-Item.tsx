@@ -10,7 +10,7 @@ interface InputItemProps extends TextInputProps {
 function InputItem({ label, descInicial, ...props }: InputItemProps) {
   const cores = useColor()
   const [hover, setHover] = useState('#5D5C5C');
-  const [textColor, setTextColor] = useState('#000');
+  const [textColor, setTextColor] = useState(cores.textColorSecundary);
   const [desc, setDesc] = useState(descInicial || '')
 
   const styles = StyleSheet.create({
