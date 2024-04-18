@@ -16,7 +16,7 @@ function InputItem({ label, descInicial, ...props }: InputItemProps) {
   const styles = StyleSheet.create({
     label: {
       fontSize: 14,
-      color: textColor,
+      color: cores.textColorPrimary,
       fontWeight: '600',
     },
     input: {
@@ -52,7 +52,7 @@ function InputItem({ label, descInicial, ...props }: InputItemProps) {
           setHover('#5D5C5C');
           setTextColor('#000');
         }}
-        placeholderTextColor={'#595959'}
+        placeholderTextColor={cores.textColorSecundary}
         value={desc}
         onChangeText={text => setDesc(text)}
         {...props}

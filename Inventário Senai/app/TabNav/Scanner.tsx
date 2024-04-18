@@ -1,6 +1,7 @@
 import React from "react";
 import { View, StyleSheet, ScrollView, Image } from "react-native";
 import { useColor } from "../../temas/Temas";
+import { MaterialIcons } from '@expo/vector-icons';
 
 function Scanner() {
     
@@ -8,8 +9,8 @@ function Scanner() {
     return (
         <ScrollView style={styles.scrollView}>
             <View style={styles.container}>
-                <Image style={{ width: 350, height: 350 }} source={require('@assets/Scanner.png')} />
-            </View>
+                <MaterialIcons name="qr-code-scanner" size={350} color={cores.scannerColor} />
+            </View>                   
         </ScrollView>     
     );
 }
@@ -21,7 +22,6 @@ const styles = StyleSheet.create({
     },
     container: {
         paddingVertical: 120,
-        paddingHorizontal: 20,
         justifyContent: 'center',
         alignItems: 'center',
     },

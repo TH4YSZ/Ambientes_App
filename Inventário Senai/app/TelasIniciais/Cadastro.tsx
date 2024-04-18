@@ -2,13 +2,15 @@ import { View, StyleSheet, ScrollView } from 'react-native';
 import Header from '@components/Header';
 import Input from '@components/Input';
 import Botao from '@components/Botao';
+import LinkBtn from '@components/LinkBtn';
 import { Link } from 'expo-router';
+import { useColor } from '../../temas/Temas';
 
 
 
 function Cadastro(){
     return(
-        <ScrollView>
+        <ScrollView style={styles.container}>
             <Header titulo="Cadastre-se" cor="#FF0000"/>
             <View style={styles.form}>
                 <Input label="Nome" placeholder={"Insira seu nome:"} />
@@ -17,22 +19,25 @@ function Cadastro(){
                 <Input label="Telefone" placeholder={"Insira seu telefone:"}/>
                 <Input label="Senha" placeholder={"Insira sua senha:"} secureTextEntry={true} />
                 <Input label="Confirmar Senha" placeholder={"Insira sua senha:"} secureTextEntry={true} />
-                <Link href="/index" asChild>
-                    <Botao texto="Cadastre-se"/> 
-                </Link>
+                <LinkBtn title="Cadastre-se" href="/TelasIniciais/Login"/>
+                
                            
             </View>
         </ScrollView>
     )
 }
-
+const cores = useColor()
 const styles = StyleSheet.create({
+    
     form:{
-        backgroundColor: "#fff",
         height: '100%',
-        marginTop: 45,
+        marginVertical: 45,
         paddingHorizontal: 20,
         width: "100%"
+    },
+    container: {
+        backgroundColor: cores.bgPrimary,
+        flex: 1
     },
 })
 export default Cadastro

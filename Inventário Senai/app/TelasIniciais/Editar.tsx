@@ -1,11 +1,10 @@
 import { View, StyleSheet, ScrollView } from "react-native"
 import TopNav from "@components/TopNavigator"
 import InputItem from "@components/Input-Item"
-
+import { useColor } from "../../temas/Temas"
 function Editar(){
     return( 
-        <ScrollView>
-            <TopNav icon="arrow-back" icon2="checkmark-circle" text="Editar" bgcolor="#FF0000" iconcolor="#fff" fontcolor="#fff"/>
+        <ScrollView style={styles.scrollview}>
                 <View style={styles.container}>
                     <InputItem label="N° do Inventário " descInicial="957689"/>
                     <InputItem label="Descrição " descInicial="CADEIRA GIRATÓRIA"/>
@@ -17,7 +16,12 @@ function Editar(){
     )
 }
 
+const cores = useColor()
 const styles = StyleSheet.create({
+    scrollview: {
+        flex: 1,
+        backgroundColor: cores.bgPrimary
+    },
     container:{
         paddingVertical: 60,
         paddingHorizontal: 20,

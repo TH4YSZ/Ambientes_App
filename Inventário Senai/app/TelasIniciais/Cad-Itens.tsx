@@ -12,7 +12,7 @@ function CadItens(){
                     <InputItem label="Responsável " descInicial="" />
                     <InputItem label="Data de registro " descInicial="" />
                 </View>
-            </ScrollView>
+        </ScrollView>
     )
 }
 

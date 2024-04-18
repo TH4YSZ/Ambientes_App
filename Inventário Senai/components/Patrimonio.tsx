@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, TouchableOpacity, TouchableOpacityProps } from "react-native";
 import { Link } from "expo-router";
-
+import { useColor } from "../temas/Temas";
 
 interface PatrimonioProps extends TouchableOpacityProps {
     id2: number;
@@ -10,7 +10,7 @@ interface PatrimonioProps extends TouchableOpacityProps {
 function Patrimonio({id2, categoria, ...props}: PatrimonioProps){
     return(
         <View style={styles.patrimonio}>
-            <Link href="/Descricao" asChild>
+            <Link href="/TelasIniciais/Descricao" asChild>
                 <TouchableOpacity {...props}>
                     <Text style={styles.id}>{id2}</Text>
                     <Text style={styles.categoria}>{categoria}</Text>
@@ -21,24 +21,26 @@ function Patrimonio({id2, categoria, ...props}: PatrimonioProps){
     
 }
 
+const cores = useColor()
 const styles = StyleSheet.create({
     id:{
         fontSize: 16,
-        fontWeight: '600'
+        fontWeight: '600',
+        color: cores.textColorPrimary
     },
     categoria:{
         fontSize: 14,
-        color: '#595959'
+        color: cores.textColorSecundary
     },
     patrimonio:{
-        borderColor: '#F5F5F5',
+        borderColor: cores.inputBgPrimary,
         borderTopWidth: 1,
         gap: 10,
         paddingVertical: 10,
         paddingHorizontal: 20,
         width: '100%',
         height: 66,
-        backgroundColor: '#fff'
+        backgroundColor: cores.bgPrimary
     }
 })
 
