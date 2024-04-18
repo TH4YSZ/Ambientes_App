@@ -5,7 +5,7 @@ import Botao from '@components/Botao';
 import Subtitulo from '@components/Subtitulo';
 import LinkBtn from '@components/LinkBtn';
 import { Link } from 'expo-router';
-import { useColor } from '../../temas/Temas';
+import { useColor } from '@temas/Temas';
 
 
 function RecSenha(){

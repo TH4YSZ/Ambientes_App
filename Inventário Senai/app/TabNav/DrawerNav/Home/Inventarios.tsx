@@ -2,7 +2,7 @@ import { ScrollView, StyleSheet, TouchableOpacity } from "react-native";
 import Patrimonio from "@components/Patrimonio";
 import { AntDesign } from '@expo/vector-icons';
 import { Link } from "expo-router";
-import { useColor } from "../../../../temas/Temas";
+import { useColor } from "@temas/Temas";
 
 function Inventarios(){
     return(
@@ -24,7 +24,7 @@ function Inventarios(){
             <Patrimonio id2={956389} categoria="CADEIRA SENAI"/>
             
             
-            <Link href="/TelasIniciais/Cad-Itens" asChild>
+            <Link href="TabNav/DrawerNav/Home/Cad-Itens" asChild>
                 <TouchableOpacity style={styles.buttomplus}>
                     <AntDesign name="pluscircle" size={50} color="#FF0000" />
                 </TouchableOpacity>

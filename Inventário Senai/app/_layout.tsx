@@ -23,7 +23,7 @@ export default function layout(){
         headerTintColor: "#fff"
       }}/>
 
-      <Stack.Screen name="TelasIniciais/Cad-Itens" options={{
+      <Stack.Screen name="TabNav/DrawerNav/Home/Descricao" options={{
         
         headerRight: () => (
           <Ionicons name="add-circle-outline" size={24} color='white' />

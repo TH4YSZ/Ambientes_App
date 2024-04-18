@@ -4,7 +4,7 @@ import Input from '@components/Input';
 import Botao from '@components/Botao';
 import LinkBtn from '@components/LinkBtn';
 import { Link } from 'expo-router';
-import { useColor } from '../../temas/Temas';
+import { useColor } from '@temas/Temas';
 
 
 

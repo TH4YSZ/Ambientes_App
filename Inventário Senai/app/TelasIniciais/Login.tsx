@@ -3,7 +3,7 @@ import Header from '@components/Header';
 import Input from '@components/Input';
 import Subtitulo from '@components/Subtitulo'
 import LinkBtn from '@components/LinkBtn';
-import { useColor } from '../../temas/Temas';
+import { useColor } from '@temas/Temas';
 import { Link } from 'expo-router';
 
 

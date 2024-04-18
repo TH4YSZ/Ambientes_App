@@ -1,7 +1,7 @@
 import { View, StyleSheet, ScrollView } from "react-native"
 import TopNav from "@components/TopNavigator"
 import InputItem from "@components/Input-Item"
-import { useColor } from "../../temas/Temas"
+import { useColor } from "@temas/Temas"
 function Editar(){
     return( 
         <ScrollView style={styles.scrollview}>

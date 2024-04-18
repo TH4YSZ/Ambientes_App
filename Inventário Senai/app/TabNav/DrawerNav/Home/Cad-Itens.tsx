@@ -1,6 +1,6 @@
 import { View, StyleSheet, ScrollView } from "react-native"
 import InputItem from "@components/Input-Item"
-import { useColor } from "../../temas/Temas"
+import { useColor } from "@temas/Temas"
 
 function CadItens(){
     return( 
