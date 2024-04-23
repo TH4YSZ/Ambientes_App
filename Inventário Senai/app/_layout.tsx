@@ -23,27 +23,7 @@ export default function layout(){
         headerTintColor: "#fff"
       }}/>
 
-      <Stack.Screen name="TabNav/DrawerNav/Home/Descricao" options={{
-        
-        headerRight: () => (
-          <Ionicons name="add-circle-outline" size={24} color='white' />
-        ),
-        headerTitle: "Cadastro de itens",
-        headerTintColor: "#fff",
-        headerStyle: { backgroundColor: cores.bgSecundary },
-        headerTitleAlign: 'center'
-      }}/>
 
-      <Stack.Screen name="TelasIniciais/Descricao" options={{
-        
-        headerRight: () => (
-          <Ionicons name="refresh" size={24} color='white' />
-        ),
-        headerTitle: "Descrição do item",
-        headerTintColor: "#fff",
-        headerStyle: { backgroundColor: cores.bgSecundary },
-        headerTitleAlign: 'center'
-      }}/>
 
       <Stack.Screen name='TabNav' options={{
         headerShown: false
@@ -52,16 +32,6 @@ export default function layout(){
       <Stack.Screen name='/TelasIniciais/Login' options={{
         headerShown: false
       }}/> 
-
-      <Stack.Screen name='TelasIniciais/Editar' options={{
-        headerRight: () => (
-          <Ionicons name="checkmark-circle" size={24} color="white" />
-        ),
-        headerTitle: "Editar",
-        headerTintColor: "#fff",
-        headerStyle: { backgroundColor: cores.bgSecundary },
-        headerTitleAlign: 'center'
-      }}/>
 
     </Stack>
     

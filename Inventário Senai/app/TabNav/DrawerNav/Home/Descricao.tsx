@@ -19,7 +19,7 @@ function Desc(){
                     <Text style={styles.desc}>05/03/2024</Text>
                 </View>
                 <TouchableOpacity style={styles.buttomedit}>
-                    <Link href="/TelasIniciais/Editar">
+                    <Link href="TabNav/DrawerNav/Home/Editar">
                         <View style={styles.editIconContainer}>
                             <MaterialIcons name="edit" size={24} color={cores.bgPrimary} />
                         </View>
