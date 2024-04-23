@@ -1,40 +1,39 @@
-import { View, StyleSheet, ScrollView, Text, TouchableOpacity } from "react-native"
+import { View, StyleSheet, ScrollView, Text, TouchableOpacity } from "react-native";
 import { MaterialIcons } from '@expo/vector-icons';
 import { Link } from "expo-router";
 import { useColor } from "@temas/Temas";
 
-function Desc(){
-    return( 
+function Desc() {
+    
+
+    return ( 
         <ScrollView style={styles.scrollview}>
-                <View style={styles.container}>
-                    <Text style={styles.titulodesc}>N° do Inventário:</Text>
-                    <Text style={styles.desc}>957689</Text>
-                    <Text style={styles.titulodesc}>Descrição:</Text>
-                    <Text style={styles.desc}>CADEIRA GIRATÓRIA</Text>
-                    <Text style={styles.titulodesc}>Local:</Text>
-                    <Text style={styles.desc}>SALA C13</Text>
-                    <Text style={styles.titulodesc}>Responsável:</Text>
-                    <Text style={styles.desc}>CARLOS</Text>
-                    <Text style={styles.titulodesc}>Data de registro:</Text>
-                    <Text style={styles.desc}>05/03/2024</Text>
-                </View>
-                <TouchableOpacity style={styles.buttomedit}>
-                    <Link href="/TelasIniciais/Editar">
-                        <View style={styles.editIconContainer}>
-                            <MaterialIcons name="edit" size={24} color={cores.bgPrimary} />
-                        </View>
-                    </Link>  
-                </TouchableOpacity>
+            <View style={styles.container}>
+                <Text style={styles.titulodesc}>N° do Inventário:</Text>
+                <Text style={styles.desc}>957689</Text>
+                <Text style={styles.titulodesc}>Descrição:</Text>
+                <Text style={styles.desc}>CADEIRA GIRATÓRIA</Text>
+                <Text style={styles.titulodesc}>Local:</Text>
+                <Text style={styles.desc}>SALA C13</Text>
+                <Text style={styles.titulodesc}>Responsável:</Text>
+                <Text style={styles.desc}>CARLOS</Text>
+                <Text style={styles.titulodesc}>Data de registro:</Text>
+                <Text style={styles.desc}>05/03/2024</Text>
+            </View>
+            <TouchableOpacity style={styles.buttomedit}>
+                <Link href="TabNav/DrawerNav/Home/Editar">
+                    <View style={styles.editIconContainer}>
+                        <MaterialIcons name="edit" size={24} color={cores.bgPrimary} />
+                    </View>
+                </Link>
+            </TouchableOpacity>
         </ScrollView>
     );
-
-    
 }
-
-const cores = useColor()
+const cores = useColor(); 
 const styles = StyleSheet.create({
     scrollview: {
-        backgroundColor: cores.bgPrimary
+        backgroundColor: cores.bgPrimary 
     },
     container: {
         paddingVertical: 60,
@@ -44,13 +43,13 @@ const styles = StyleSheet.create({
     titulodesc: {
         fontWeight: '600',
         fontSize: 14,
-        color: cores.textColorPrimary
+        color: cores.textColorPrimary 
     },
     desc: {
         fontSize: 18,
         paddingTop: 10,
         paddingBottom: 20,
-        color: cores.textColorSecundary
+        color: cores.textColorSecundary 
     },
     buttomedit: {
         borderRadius: 100,
@@ -76,7 +75,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: '#FF0000'
     }
-})
+});
 
-
-export default Desc
+export default Desc;

@@ -9,9 +9,9 @@ interface Cores {
     inputBgPrimary: string,
     inputTextPrimary: string,
     bgHover: string,
-    loginHeader?: string,
-    recSenhaHeader?: string,
-    cadastroHeader?: string,
+    loginHeader: string,
+    recSenhaHeader: string,
+    cadastroHeader: string,
     bgButtom: string,
     colorLinks: string,
     headerBgColor: string,
@@ -30,6 +30,7 @@ const light: Cores = {
     bgHover: "#F39200",
     loginHeader: "#000000",
     cadastroHeader: "#FF0000",
+    recSenhaHeader: '#011E83',
     bgButtom: "#000000",
     colorLinks: "#011E83",
     headerBgColor: '#FF0000',
@@ -48,7 +49,10 @@ const dark: Cores = {
     colorLinks: "#FFFFFF",
     headerBgColor: "#FF0000",
     scannerColor: "#D9D9D9",
-    headerTintColor: '#fff'
+    headerTintColor: '#fff',
+    loginHeader: '#240707',
+    recSenhaHeader: '#240707',
+    cadastroHeader: '#240707'
 }
 
 export function useColor(){

@@ -49,19 +49,9 @@ export default function layout(){
         headerShown: false
       }}/> 
       
-      <Stack.Screen name='/TelasIniciais/Login' options={{
+      <Stack.Screen name='TelasIniciais/Login' options={{
         headerShown: false
       }}/> 
-
-      <Stack.Screen name='TelasIniciais/Editar' options={{
-        headerRight: () => (
-          <Ionicons name="checkmark-circle" size={24} color="white" />
-        ),
-        headerTitle: "Editar",
-        headerTintColor: "#fff",
-        headerStyle: { backgroundColor: cores.bgSecundary },
-        headerTitleAlign: 'center'
-      }}/>
 
     </Stack>
     

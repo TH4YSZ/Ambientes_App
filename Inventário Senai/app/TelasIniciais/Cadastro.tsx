@@ -9,9 +9,10 @@ import { useColor } from '@temas/Temas';
 
 
 function Cadastro(){
+    const cores = useColor()
     return(
         <ScrollView style={styles.container}>
-            <Header titulo="Cadastre-se" cor="#FF0000"/>
+            <Header titulo="Cadastre-se" cor={cores.cadastroHeader}/>
             <View style={styles.form}>
                 <Input label="Nome" placeholder={"Insira seu nome:"} />
                 <Input label="Sobrenome" placeholder={"Insira seu sobrenome:"} />

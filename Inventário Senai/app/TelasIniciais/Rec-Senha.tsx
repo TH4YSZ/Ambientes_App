@@ -11,7 +11,7 @@ import { useColor } from '@temas/Temas';
 function RecSenha(){
     return(
         <View style={styles.container}>
-            <Header titulo="Recuperação de senha" cor="#011E83"/>
+            <Header titulo="Recuperação de senha" cor={cores.recSenhaHeader}/>
             <View style={styles.form}>
                 <Subtitulo subtitulo="Insira seu e-mail para recuperar a senha!"/>
                 <Input label="Email" placeholder={"Insira seu email:"}/>
