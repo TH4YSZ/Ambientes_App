@@ -10,7 +10,7 @@ interface PatrimonioProps extends TouchableOpacityProps {
 function Patrimonio({id2, categoria, ...props}: PatrimonioProps){
     return(
         <View style={styles.patrimonio}>
-            <Link href="TabNav/DrawerNav/Home/Descricao" asChild>
+            <Link href="/TelasIniciais/Descricao" asChild>
                 <TouchableOpacity {...props}>
                     <Text style={styles.id}>{id2}</Text>
                     <Text style={styles.categoria}>{categoria}</Text>
