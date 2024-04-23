@@ -33,6 +33,7 @@ export default function layout(){
                 tabBarInactiveTintColor: '#fff',
                 }}/>
             
+            
         </Tabs>
     )
 }
