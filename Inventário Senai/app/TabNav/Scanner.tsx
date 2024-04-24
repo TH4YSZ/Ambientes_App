@@ -1,34 +1,55 @@
-import React from "react";
-import { View, StyleSheet, ScrollView, Image } from "react-native";
-import { useColor } from "../../temas/Temas";
-import { MaterialIcons } from '@expo/vector-icons';
+import React, { useState } from "react";
+import { View, StyleSheet, TouchableOpacity} from "react-native";
+import {MaterialIcons} from '@expo/vector-icons';
+import { Camera, CameraType } from "expo-camera";
+import { useColor } from "@temas/Temas";
 
-function Scanner() {
-    
- 
-    return (
-        <ScrollView style={styles.scrollView}>
-            <View style={styles.container}>
-                <MaterialIcons name="qr-code-scanner" size={350} color={cores.scannerColor} />
-            </View>                   
-        </ScrollView>     
+
+const Scanner = () => {
+    const [type, setType] = useState(CameraType.back);
+    const [permission, requestPermission] = Camera.useCameraPermissions();
+    const [iconOpacity, setIconOpacity] = useState(1); 
+    const cores = useColor()
+
+    if (!permission)
+        return null;
+
+    if (!permission.granted)
+        return null;
+
+
+    return(
+        <View style={styles.container}>
+            <Camera style={styles.camera} type={type}>
+                <View style={styles.qrContainer}>
+                    <TouchableOpacity>
+                        <MaterialIcons name="qr-code-scanner" size={300} color={cores.scannerColor} style={{ opacity: iconOpacity }} />
+                    </TouchableOpacity>
+                </View>
+            </Camera>
+        </View>
     );
 }
-const cores = useColor();
+
 const styles = StyleSheet.create({
-    scrollView: {
-        flex: 1,
-        backgroundColor: cores.bgPrimary
-    },
     container: {
-        paddingVertical: 120,
+        flex: 1,
         justifyContent: 'center',
+        alignContent: 'center',
+      },
+    camera: {
+        flex: 1,
+        justifyContent: 'center',
+        alignContent: 'center',
         alignItems: 'center',
+        paddingTop: 240,
     },
+    qrContainer: {
+        flex: 1,
+        alignSelf: 'center',
+        verticalAlign: 'middle',
+        opacity: 0.1
+    }
 });
 
 export default Scanner;
-
-
-// colorcar a imagem do scanner como vetor
-// alterar a tabNav

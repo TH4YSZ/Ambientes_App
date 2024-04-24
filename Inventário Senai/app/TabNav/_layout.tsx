@@ -14,26 +14,26 @@ export default function layout(){
                 <MaterialIcons name="camera-alt" size={size} color={color} />
             ),
         }}>
-            <Tabs.Screen name="Scanner" options={{
-                headerRight: () => (
-                    <Ionicons name="refresh" size={24} color='white' />
-                  ),
-                headerTintColor: '#fff',
-                headerStyle: {backgroundColor: cores.bgSecundary }
-            }}/>
+        <Tabs.Screen name="Scanner"
+            options={{
+                headerRight: () => <Ionicons name="refresh" size={24} color={'white'} />,
+                headerTitle: "Scanner",
+                headerTintColor: "#fff",
+                headerStyle: { backgroundColor: cores.bgSecundary },
+            }}
+        />
 
-            <Tabs.Screen name="DrawerNav" options={{
+        <Tabs.Screen name="DrawerNav"
+            options={{
                 headerShown: false,
                 tabBarStyle:{
-                    backgroundColor: '#FF0000'
-                },
+                    backgroundColor: '#FF0000'},
                 tabBarIcon: ({color, size}) => (
                     <MaterialIcons name="format-list-bulleted" size={size} color={color} />
                 ),
                 tabBarInactiveTintColor: '#fff',
-                }}/>
-            
-            
+            }}
+        />   
         </Tabs>
     )
 }

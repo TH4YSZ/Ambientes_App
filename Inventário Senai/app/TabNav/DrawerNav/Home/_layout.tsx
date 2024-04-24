@@ -1,3 +1,4 @@
+import React from "react";
 import { Stack } from "expo-router";
 import { DrawerToggleButton } from "@react-navigation/drawer";
 import { useColor } from "../../../../temas/Temas";
@@ -8,19 +9,17 @@ export default function Layout() {
     
     return (
         <Stack>
-            <Stack.Screen 
-                name="Inventarios" 
+            <Stack.Screen name="Inventarios" 
                 options={{
-                    headerLeft: () => <DrawerToggleButton />,
-                    headerSearchBarOptions: { placeholder: "Pesquisar" },
+                    headerLeft: () => <DrawerToggleButton tintColor={cores.headerTintColor} />,
+                    headerSearchBarOptions: { placeholder: "Pesquisar"},
                     headerTitleAlign: 'center',
                     headerTitle: 'Lista',
                     headerTintColor: cores.headerTintColor,
                     headerStyle: { backgroundColor: cores.bgPrimary }
                 }}
             />
-            <Stack.Screen 
-                name="Cad-Itens" 
+            <Stack.Screen name="Cad-Itens" 
                 options={{
                     headerRight: () => <Ionicons name="add-circle-outline" size={24} color='white' />,
                     headerTitle: "Cadastro de itens",
@@ -29,8 +28,7 @@ export default function Layout() {
                     headerTitleAlign: 'center'
                 }}
             />
-            <Stack.Screen 
-                name="Descricao" 
+            <Stack.Screen name="Descricao" 
                 options={{
                     headerRight: () => <Ionicons name="refresh" size={24} color={'white'} />,
                     headerTitle: "Descrição do item",
@@ -39,8 +37,7 @@ export default function Layout() {
                     headerTitleAlign: 'center'
                 }}
             />
-            <Stack.Screen 
-                name='Editar' 
+            <Stack.Screen name='Editar' 
                 options={{
                     headerRight: () => <Ionicons name="checkmark-circle" size={24} color="white" />,
                     headerTitle: "Editar",
