@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignContent: 'center',
-      },
+    },
     camera: {
         flex: 1,
         justifyContent: 'center',
@@ -45,10 +45,8 @@ const styles = StyleSheet.create({
         paddingTop: 240,
     },
     qrContainer: {
-        flex: 1,
         alignSelf: 'center',
-        verticalAlign: 'middle',
-        opacity: 0.1
+        opacity: 0.2
     }
 });
 
