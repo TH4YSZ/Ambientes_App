@@ -2,6 +2,7 @@ import { Tabs } from "expo-router";
 import {MaterialIcons} from '@expo/vector-icons';
 import { useColor } from "../../temas/Temas";
 import { Ionicons } from '@expo/vector-icons';
+import { Link } from "expo-router";
 
 export default function layout(){
     const cores = useColor()
@@ -16,7 +17,10 @@ export default function layout(){
         }}>
         <Tabs.Screen name="Scanner"
             options={{
-                headerRight: () => <Ionicons name="refresh" size={24} color={'white'} />,
+                headerRight: () =>
+                <Link href="TabNav/Scanner" asChild>   
+                    <Ionicons style={{paddingRight: 10}}name="refresh" size={24} color={'white'} />
+                </Link>,
                 headerTitle: "Scanner",
                 headerTintColor: "#fff",
                 headerStyle: { backgroundColor: cores.bgSecundary },

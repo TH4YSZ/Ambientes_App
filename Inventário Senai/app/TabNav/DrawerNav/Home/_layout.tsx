@@ -1,7 +1,7 @@
 import React from "react";
-import { Stack } from "expo-router";
+import { Link, Stack } from "expo-router";
 import { DrawerToggleButton } from "@react-navigation/drawer";
-import { useColor } from "../../../../temas/Temas";
+import { useColor } from "@temas/Temas";
 import { Ionicons } from '@expo/vector-icons';
 
 export default function Layout() {
@@ -12,7 +12,9 @@ export default function Layout() {
             <Stack.Screen name="Inventarios" 
                 options={{
                     headerLeft: () => <DrawerToggleButton tintColor={cores.headerTintColor} />,
-                    headerSearchBarOptions: { placeholder: "Pesquisar"},
+                    headerSearchBarOptions: { placeholder: "Pesquisar",
+                        headerIconColor: cores.headerTintColor
+                     },
                     headerTitleAlign: 'center',
                     headerTitle: 'Lista',
                     headerTintColor: cores.headerTintColor,
@@ -21,7 +23,11 @@ export default function Layout() {
             />
             <Stack.Screen name="Cad-Itens" 
                 options={{
-                    headerRight: () => <Ionicons name="add-circle-outline" size={24} color='white' />,
+                    headerRight: () => 
+                        <Link href="TabNav/DrawerNav/Home/Inventarios" asChild>
+                            <Ionicons name="add-circle-outline" size={24} color='white' />
+                        </Link>
+                    ,
                     headerTitle: "Cadastro de itens",
                     headerTintColor: "#fff",
                     headerStyle: { backgroundColor: cores.bgSecundary },
@@ -30,7 +36,10 @@ export default function Layout() {
             />
             <Stack.Screen name="Descricao" 
                 options={{
-                    headerRight: () => <Ionicons name="refresh" size={24} color={'white'} />,
+                    headerRight: () =>
+                        <Link href="TabNav/DrawerNav/Home/Descricao" asChild>
+                            <Ionicons name="refresh" size={24} color={'white'} />
+                        </Link>,
                     headerTitle: "Descrição do item",
                     headerTintColor: "#fff",
                     headerStyle: { backgroundColor: cores.bgSecundary },
@@ -39,7 +48,10 @@ export default function Layout() {
             />
             <Stack.Screen name='Editar' 
                 options={{
-                    headerRight: () => <Ionicons name="checkmark-circle" size={24} color="white" />,
+                    headerRight: () =>
+                        <Link href="TabNav/DrawerNav/Home/Descricao" asChild>
+                            <Ionicons name="checkmark-circle" size={24} color="white" />
+                        </Link>,
                     headerTitle: "Editar",
                     headerTintColor: "#fff",
                     headerStyle: { backgroundColor: cores.bgSecundary },
