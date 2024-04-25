@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet, TouchableOpacity, TouchableOpacityProps } from "react-native";
 import { Link } from "expo-router";
-import { useColor } from "../temas/Temas";
+import { useColor } from "@temas/Temas";
 
 interface PatrimonioProps extends TouchableOpacityProps {
     id2: number;

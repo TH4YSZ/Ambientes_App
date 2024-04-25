@@ -3,7 +3,6 @@ import { DrawerItemList } from '@react-navigation/drawer'
 import { useColor } from '@temas/Temas';
 
 export default function CustomDrawer(props: any) {
-    const cores = useColor();
 
     return (
         <View style={styles.container}>
@@ -46,5 +45,5 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 16,
         color: cores.textColorPrimary
-    },
+    }
 });

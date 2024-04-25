@@ -1,7 +1,7 @@
 import { Link } from "expo-router";
 import { LinkProps } from "next/link";
 import { Text, TouchableOpacity, StyleSheet} from "react-native";
-import { useColor } from "../temas/Temas";
+import { useColor } from "@temas/Temas";
 
 
 interface LinkBtnProps extends LinkProps{

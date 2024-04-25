@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
         paddingTop: 240,
     },
     qrContainer: {
-        alignSelf: 'center',
+        alignItems: 'center',
         opacity: 0.2
     }
 });
