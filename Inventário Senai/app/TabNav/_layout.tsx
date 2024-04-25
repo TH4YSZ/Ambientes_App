@@ -1,6 +1,6 @@
 import { Tabs } from "expo-router";
 import {MaterialIcons} from '@expo/vector-icons';
-import { useColor } from "../../temas/Temas";
+import { useColor } from "@temas/Temas";
 import { Ionicons } from '@expo/vector-icons';
 import { Link } from "expo-router";
 
