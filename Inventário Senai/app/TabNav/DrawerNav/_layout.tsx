@@ -1,10 +1,6 @@
 import CustomDrawer from '@components/CustomDrawer';
 import { Drawer } from 'expo-router/drawer';
-import { MaterialIcons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { Ionicons } from '@expo/vector-icons';
-import { FontAwesome6 } from '@expo/vector-icons';
-import { FontAwesome } from '@expo/vector-icons';
 
 export default function Layout() {
     return (
@@ -20,8 +16,10 @@ export default function Layout() {
                 name="Home"
                 options={{
                     headerShown: false,
+                    drawerLabelStyle: { color: "black" },
+                    drawerActiveBackgroundColor: "#FFCECE",
                     drawerIcon: ({ size, color }) => (
-                        <MaterialIcons name="home" size={size} color={color} />
+                        <MaterialCommunityIcons name="home" size={24} color="black" />
                     ),
                     headerTitle: "Home",
                     headerTitleAlign: 'center'
@@ -32,6 +30,8 @@ export default function Layout() {
                 name="All Reservas"
                 options={{
                     headerShown: true,
+                    drawerLabelStyle: { color: "black" },
+                    drawerActiveBackgroundColor: "#FFCECE",
                     drawerIcon: ({ size, color }) => (
                         <MaterialCommunityIcons name="account" size={size} color={color} />
                     ),
@@ -44,8 +44,10 @@ export default function Layout() {
                 name="Cad Ambiente"
                 options={{
                     headerShown: true,
-                    drawerIcon: ({ size, color }) => (
-                        <FontAwesome6 name="house-circle-check" size={size} color="black" />
+                    drawerLabelStyle: { color: "black" },
+                    drawerActiveBackgroundColor: "#FFCECE",
+                    drawerIcon: () => (
+                        <MaterialCommunityIcons name="home-plus" size={24} color="black" />
                     ),
                     headerTitle: "Cadastro de Ambiente",
                     headerTitleAlign: 'center'
@@ -56,8 +58,10 @@ export default function Layout() {
                 name="Cad Usuário"
                 options={{
                     headerShown: true,
-                    drawerIcon: ({ size, color }) => (
-                        <FontAwesome name="user-plus" size={size} color="black" />
+                    drawerLabelStyle: { color: "black" },
+                    drawerActiveBackgroundColor: "#FFCECE",
+                    drawerIcon: () => (
+                        <MaterialCommunityIcons name="account-multiple-plus" size={24} color="black" />
                     ),
                     headerTitle: "Cadastro de Usuário",
                     headerTitleAlign: 'center'
@@ -68,8 +72,10 @@ export default function Layout() {
                 name="Sair"
                 options={{
                     headerShown: false,
-                    drawerIcon: ({ size, color }) => (
-                        <Ionicons name="exit" size={size} color={color} />
+                    drawerLabelStyle: { color: "black" },
+                    drawerActiveBackgroundColor: "#FFCECE",
+                    drawerIcon: () => (
+                        <MaterialCommunityIcons name="exit-to-app" size={24} color="black" />
                     ),
                     headerTitle: "Sair",
                     headerTitleAlign: 'center'

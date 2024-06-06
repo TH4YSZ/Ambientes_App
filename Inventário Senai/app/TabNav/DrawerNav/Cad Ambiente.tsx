@@ -10,8 +10,8 @@ function CadAmbientes(){
                         <InputItem label="Nome do Ambiente" descInicial="" />
                         <InputItem label="Descrição " descInicial=""/>
                         <InputItem label="Sala " descInicial="" />
-                    </View>
-                        <LinkBtn title="Cadastrar" href="Ambientes" />
+                        <LinkBtn title="Cadastrar" href="/TabNav/Ambiente" />
+                    </View>                        
             </ScrollView>
         </ImageBackground>
     )

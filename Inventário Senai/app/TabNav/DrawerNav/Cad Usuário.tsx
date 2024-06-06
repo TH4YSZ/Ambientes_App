@@ -15,7 +15,7 @@ function Cadastro(){
                     <Input label="Telefone" placeholder={"Insira seu telefone:"}/>
                     <Input label="Senha" placeholder={"Insira sua senha:"} secureTextEntry={true} />
                     <Input label="Confirmar Senha" placeholder={"Insira sua senha:"} secureTextEntry={true} />
-                    <LinkBtn title="Cadastre-se" href="/TelasIniciais/Login"/>
+                    <LinkBtn title="Cadastrar" href="TabNav/Ambiente"/>
                 </View>
             </ScrollView>
         </ImageBackground>
