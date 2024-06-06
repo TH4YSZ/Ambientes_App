@@ -1,6 +1,5 @@
 import {View, Text, StyleSheet, Image} from 'react-native'
 import { DrawerItemList } from '@react-navigation/drawer'
-import { FontAwesome5 } from '@expo/vector-icons';
 
 export default function CustomDrawer(props: any) {
 

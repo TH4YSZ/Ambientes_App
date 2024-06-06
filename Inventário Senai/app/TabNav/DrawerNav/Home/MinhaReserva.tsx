@@ -7,34 +7,34 @@ const MinhaReserva: React.FC = () => {
     <ScrollView style={styles.container}>
       <CardReserva
         title="Reserva 01"
-        text="Descrição da reserva 01"
         data="Data: 01/01/2021"
         hora="Hora: 10:00"
         local="Local: Laboratório 01"
+        responsavel='Carlos'
       />
 
       <CardReserva
         title="Reserva 02"
-        text="Descrição da reserva 02"
         data="Data: 01/01/2021"
         hora="Hora: 10:00"
         local="Local: Laboratório 02"
+        responsavel='Thigas'
       />
 
       <CardReserva
         title="Reserva 03"
-        text="Descrição da reserva 03"
         data="Data: 01/01/2021"
         hora="Hora: 10:00"
         local="Local: Laboratório 03"
+        responsavel='Thiegue'
       />
 
       <CardReserva
             title="Reserva 04"
-            text="Descrição da reserva 04"
             data="Data: 01/01/2021"
             hora="Hora: 10:00"
             local="Local: Laboratório 04"
+            responsavel='Yuri'
       />
     </ScrollView>
   );

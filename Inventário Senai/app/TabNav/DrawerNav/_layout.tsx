@@ -3,14 +3,11 @@ import {Drawer} from 'expo-router/drawer'
 import {MaterialIcons} from '@expo/vector-icons'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
-import { useColor } from '@temas/Temas';
-
 
 export default function Layout() {
-    const cores = useColor()
     return (
         <Drawer screenOptions={{
-            drawerInactiveTintColor: cores.textColorPrimary
+            drawerInactiveTintColor: "black"
         }} drawerContent={(...props) => (
             CustomDrawer(...props)
         )}>

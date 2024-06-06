@@ -1,25 +1,28 @@
 import React from 'react';
+import { Link } from 'expo-router';
 import { StyleSheet, Text, View, TouchableOpacity, Button } from 'react-native';
 
 type Props = {
   title: string;
-  text: string;
   data: string;
   hora: string;
   local: string;
+  responsavel: string
 };
 
-const CardReserva: React.FC<Props> = ({ title, text, data, hora, local }) => {
+const CardReserva: React.FC<Props> = ({ title, data, hora, local,responsavel }) => {
   return (
     <View style={styles.card}>
       <View style={styles.cardContent}>
         <Text style={styles.cardTitle}>{title}</Text>
-        <Text style={styles.cardText}>{text}</Text>
         <Text style={styles.cardText}>{data}</Text>
         <Text style={styles.cardText}>{hora}</Text>
         <Text style={styles.cardText}>{local}</Text>
-        <TouchableOpacity style={styles.button} onPress={() => {}}>
-          <Text style={styles.buttonText}>Remover</Text>
+        <Text style={styles.cardText}>{responsavel}</Text>
+        <TouchableOpacity style={styles.deleteButton}>
+          <Link href="" asChild>
+            <Text style={styles.deleteButtonText}>Excluir</Text>
+          </Link>
         </TouchableOpacity>
       </View>
     </View>
@@ -50,18 +53,20 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#333',
   },
-  button: {
-    backgroundColor: 'red',
+  deleteButton: {
+    marginTop: 10,
+    backgroundColor: '#fff',
     paddingVertical: 10,
     paddingHorizontal: 20,
-    borderRadius: 5,
-    marginTop: 10,
-    alignItems: 'center',
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: '#ff0000',
+    alignItems: 'center'
   },
-  buttonText: {
-    color: '#fff',
-    fontSize: 16,
-  },
+  deleteButtonText: {
+    color: '#ff0000',
+    fontSize: 16
+  }
 });
 
 export default CardReserva;

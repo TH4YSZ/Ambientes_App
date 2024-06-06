@@ -1,6 +1,5 @@
-import { Tabs } from "expo-router";
+import { Tabs, Stack } from "expo-router";
 import {MaterialIcons, FontAwesome} from '@expo/vector-icons';
-import { useColor } from "@temas/Temas";
 import { Ionicons } from '@expo/vector-icons';
 import { Link } from "expo-router";
 import { DrawerToggleButton } from "@react-navigation/drawer";
@@ -10,7 +9,7 @@ export default function layout(){
         
         <Tabs screenOptions={{
             tabBarShowLabel: false, 
-            tabBarStyle: { backgroundColor:"#fff"},
+            tabBarStyle: { backgroundColor:"black"},
             tabBarIcon: ({color, size}) => (
                 <FontAwesome name="list-alt" size={size} color={color} />
             ),
@@ -21,9 +20,10 @@ export default function layout(){
                 <Link href="TabNav/Ambiente" asChild>   
                     <Ionicons style={{paddingRight: 10}}name="refresh" size={24} color={'white'} />
                 </Link>,
+                headerTitleAlign: 'center',
                 headerTitle: "Ambientes",
-                headerTintColor: "#fff",
-                headerStyle: { backgroundColor: "#ff0000"},
+                headerTintColor: "black",
+                headerStyle: { backgroundColor: "white"},
             }}
         />
 
@@ -39,5 +39,6 @@ export default function layout(){
             }}
         />   
         </Tabs>
+
     )
 }

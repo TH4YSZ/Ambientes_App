@@ -2,15 +2,11 @@ import { View, StyleSheet, ScrollView } from 'react-native';
 import Header from '@components/Header';
 import Input from '@components/Input';
 import LinkBtn from '@components/LinkBtn';
-import { useColor } from '@temas/Temas';
-
-
 
 function Cadastro(){
-    const cores = useColor()
     return(
         <ScrollView style={styles.container}>
-            <Header titulo="Cadastre-se" cor={cores.cadastroHeader}/>
+            <Header/>
             <View style={styles.form}>
                 <Input label="Nome" placeholder={"Insira seu nome:"} />
                 <Input label="Sobrenome" placeholder={"Insira seu sobrenome:"} />
@@ -23,9 +19,8 @@ function Cadastro(){
         </ScrollView>
     )
 }
-const cores = useColor()
+
 const styles = StyleSheet.create({
-    
     form:{
         height: '100%',
         marginVertical: 45,

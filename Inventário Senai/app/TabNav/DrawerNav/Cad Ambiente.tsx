@@ -1,6 +1,6 @@
-import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from "react-native"
-import { Link } from "expo-router"
+import { View, StyleSheet, ScrollView, TouchableOpacity } from "react-native"
 import InputItem from "@components/Input-Item"
+import LinkBtn from "@components/LinkBtn"
 
 function CadAmbientes(){
     return( 
@@ -10,11 +10,7 @@ function CadAmbientes(){
                     <InputItem label="Descrição " descInicial=""/>
                     <InputItem label="Sala " descInicial="" />
                 </View>
-                <TouchableOpacity style={styles.button}>
-                        <Link href="" asChild>
-                            <Text style={styles.buttonText}>Reservar</Text>
-                        </Link>
-                </TouchableOpacity>
+                    <LinkBtn title="Cadastrar" href="Ambientes" />
         </ScrollView>
     )
 }
@@ -29,16 +25,5 @@ const styles = StyleSheet.create({
         paddingHorizontal: 20,
         height: '100%',
     },
-    button: {
-        marginTop: 10,
-        backgroundColor: '#000',
-        paddingVertical: 10,
-        paddingHorizontal: 15,
-        borderRadius: 10,
-    },
-    buttonText: {
-        color: '#fff',
-        fontSize: 16,
-    }
 })
 export default CadAmbientes

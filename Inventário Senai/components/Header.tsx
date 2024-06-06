@@ -1,17 +1,10 @@
 import { View, Text, StyleSheet, Image} from "react-native"
 import React from 'react';
 
-type HeaderProps = {
-  titulo: string,
-  cor: string
-}
-
-function Header({cor, titulo}: HeaderProps){
+function Header(){
     return (
-      
-      <View style={{...styles.container, backgroundColor: cor}}>
+      <View style={{...styles.container}}>
           <Image style={styles.logo} source={require('@assets/LogoSenai.png')}/>
-          <Text style={styles.text}>{titulo}</Text>
       </View>
         
     )
@@ -21,7 +14,7 @@ const styles = StyleSheet.create({
   container:{
     alignItems: 'center',
     fontFamily: 'Roboto',
-    height: 200,
+    height: 300,
     width: "100%",
     justifyContent: "center",
     borderBottomEndRadius: 5,
@@ -29,8 +22,8 @@ const styles = StyleSheet.create({
     gap: 10
   },
   logo:{
-    width: 181,
-    height: 39,
+    width: 200,
+    height: 50,
     marginHorizontal: 73,
   },
   text:{

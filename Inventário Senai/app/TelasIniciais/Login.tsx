@@ -1,44 +1,56 @@
-import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { View, StyleSheet, ImageBackground } from 'react-native';
 import Header from '@components/Header';
 import Input from '@components/Input';
-import Subtitulo from '@components/Subtitulo'
+import Subtitulo from '@components/Subtitulo';
 import LinkBtn from '@components/LinkBtn';
-import { useColor } from '@temas/Temas';
 import { Link } from 'expo-router';
-
 
 function Login() {
     return (
-        <View style={styles.container}>
-            <Header titulo="Login" cor={cores.loginHeader} />
-            <View style={styles.form}>
-                <Subtitulo subtitulo="Faça Login para Acessar o Sistema!" />
-                <Input label="Nome de Usuário" placeholder='Insira seu nome' />
-                <Input label="Senha" placeholder={'Insira sua senha'} secureTextEntry={true} />
-                <LinkBtn title="Entrar" href="TabNav" />
+        <ImageBackground source={require('@assets/bg.jpg')} style={styles.backgroundImage}>
+            <View style={styles.overlay}>
+                <Header/>
+                <View style={styles.formContainer}>
+                    <Subtitulo subtitulo="Faça Login para Acessar o Sistema!" />
+                    <View style={styles.form}>
+                        <Input label="Nome de Usuário" placeholder="Insira seu nome" />
+                        <Input label="Senha" placeholder="Insira sua senha" secureTextEntry={true} />
+                        <LinkBtn title="Entrar" href="TabNav" />
+                    </View>
+                </View>
             </View>
-        </View>
-
-    )
+        </ImageBackground>
+    );
 }
 
-const cores = useColor()
-
 const styles = StyleSheet.create({
-    container: {
-        backgroundColor: "#fff",
-        flex: 1
+    backgroundImage: {
+        flex: 1,
+        resizeMode: 'cover',
+        justifyContent: 'center',
+    },
+    overlay: {
+        flex: 1,
+        justifyContent: 'center',
+    },
+    formContainer: {
+        backgroundColor: '#fff',
+        borderRadius: 10,
+        padding: 20,
+        marginHorizontal: 20,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.25,
+        shadowRadius: 3.84,
+        elevation: 5,
     },
     form: {
-        backgroundColor: "#fff",
-        height: '100%',
-        marginTop: 45,
-        paddingHorizontal: 20,
-        width: "100%",
+        marginTop: 20,
     },
     text: {
-        color: "#011E83",
+        color: '#011E83',
     }
-})
+});
 
-export default Login
+export default Login;
