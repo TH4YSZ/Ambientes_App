@@ -1,26 +1,24 @@
 import { useState } from 'react';
 import { View, Text, TextInput, StyleSheet, TextInputProps } from 'react-native';
-import { useColor } from '@temas/Temas';
 
 interface InputProps extends TextInputProps {
   label: string;
 }
 
 function Input({ label, ...props }: InputProps) {
-  const cores = useColor()
   
-  const [hover, setHover] = useState(cores.inputBgPrimary)
+  const [hover, setHover] = useState('black')
   const styles = StyleSheet.create({
     label: {
       fontSize: 16,
-      color: cores.textColorPrimary,
+      color: 'black',
     },
     input: {
       height: 40,
       marginTop: 15,
       marginBottom: 30,
       padding: 10,
-      backgroundColor: cores.inputBgPrimary,
+      backgroundColor: '#f0f0f0',
       borderRadius: 5,
       borderWidth: 1,
       borderColor: hover,
@@ -32,11 +30,11 @@ function Input({ label, ...props }: InputProps) {
       <Text style={styles.label}>{label}:</Text>
       <TextInput
         style={styles.input} onFocus={()=>{
-          setHover(cores.bgHover)
+          setHover('#a10000')
         }} onBlur={()=>{
-          setHover(cores.inputBgPrimary)
+          setHover('black')
         }}
-        placeholderTextColor={cores.inputTextPrimary}
+        placeholderTextColor={'#bdbdbd'}
         {...props}
       />
     </View>

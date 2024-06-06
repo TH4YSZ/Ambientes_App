@@ -10,20 +10,6 @@ export default function layout(){
           headerShown: false
       }}/> 
 
-      <Stack.Screen name='TelasIniciais/Rec-Senha'
-        options={{
-          headerTitle: "",
-          headerTransparent: true,
-          headerTintColor: "#fff"
-      }}/> 
-
-      <Stack.Screen name='TelasIniciais/Cadastro'
-        options={{
-          headerTitle: "",
-          headerTransparent: true,
-          headerTintColor: "#fff"
-      }}/>
-
       <Stack.Screen name='TabNav' 
         options={{
           headerShown: false

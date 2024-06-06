@@ -1,29 +1,29 @@
 import { Tabs } from "expo-router";
-import {MaterialIcons} from '@expo/vector-icons';
+import {MaterialIcons, FontAwesome} from '@expo/vector-icons';
 import { useColor } from "@temas/Temas";
 import { Ionicons } from '@expo/vector-icons';
 import { Link } from "expo-router";
+import { DrawerToggleButton } from "@react-navigation/drawer";
 
 export default function layout(){
-    const cores = useColor()
     return(
         
         <Tabs screenOptions={{
-            tabBarShowLabel: false,
-            tabBarStyle: { backgroundColor: cores.bgPrimary },
+            tabBarShowLabel: false, 
+            tabBarStyle: { backgroundColor:"#fff"},
             tabBarIcon: ({color, size}) => (
-                <MaterialIcons name="camera-alt" size={size} color={color} />
+                <FontAwesome name="list-alt" size={size} color={color} />
             ),
         }}>
-        <Tabs.Screen name="Scanner"
+        <Tabs.Screen name="Ambiente"
             options={{
                 headerRight: () =>
-                <Link href="TabNav/Scanner" asChild>   
+                <Link href="TabNav/Ambiente" asChild>   
                     <Ionicons style={{paddingRight: 10}}name="refresh" size={24} color={'white'} />
                 </Link>,
-                headerTitle: "Scanner",
+                headerTitle: "Ambientes",
                 headerTintColor: "#fff",
-                headerStyle: { backgroundColor: cores.bgSecundary },
+                headerStyle: { backgroundColor: "#ff0000"},
             }}
         />
 
@@ -31,7 +31,7 @@ export default function layout(){
             options={{
                 headerShown: false,
                 tabBarStyle:{
-                    backgroundColor: '#FF0000'},
+                    backgroundColor: 'black'},
                 tabBarIcon: ({color, size}) => (
                     <MaterialIcons name="format-list-bulleted" size={size} color={color} />
                 ),

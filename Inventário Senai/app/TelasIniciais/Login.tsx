@@ -7,56 +7,38 @@ import { useColor } from '@temas/Temas';
 import { Link } from 'expo-router';
 
 
-function Login(){
-    return(
+function Login() {
+    return (
         <View style={styles.container}>
-            <Header titulo="Login" cor={cores.loginHeader}/>
+            <Header titulo="Login" cor={cores.loginHeader} />
             <View style={styles.form}>
-                <Subtitulo subtitulo="Faça Login para Acessar o Sistema!"/>
-                <Input label="Email" placeholder='Insira seu email:'/>
-                <Input label="Senha" placeholder ={'Insira sua senha:'} secureTextEntry={true}/>
-                <LinkBtn title="Entrar" href="TabNav"/>
-                <View style={styles.links}>
-                    <Link href="/TelasIniciais/Cadastro" asChild>
-                        <TouchableOpacity>
-                            <Text style={styles.text}>Cadastre-se</Text>
-                        </TouchableOpacity>
-                    </Link>
-                    <Link href="/TelasIniciais/Rec-Senha" asChild>
-                        <TouchableOpacity>
-                            <Text style ={styles.text}>Esqueceu a senha?</Text>  
-                        </TouchableOpacity>
-                    </Link>   
-                </View>         
+                <Subtitulo subtitulo="Faça Login para Acessar o Sistema!" />
+                <Input label="Nome de Usuário" placeholder='Insira seu nome' />
+                <Input label="Senha" placeholder={'Insira sua senha'} secureTextEntry={true} />
+                <LinkBtn title="Entrar" href="TabNav" />
             </View>
         </View>
+
     )
 }
 
 const cores = useColor()
 
 const styles = StyleSheet.create({
-    container:{
-        backgroundColor: cores.bgPrimary,
+    container: {
+        backgroundColor: "#fff",
         flex: 1
     },
-    form:{
-        backgroundColor: cores.bgPrimary,
+    form: {
+        backgroundColor: "#fff",
         height: '100%',
         marginTop: 45,
         paddingHorizontal: 20,
         width: "100%",
     },
-    links: {
-        fontSize: 14,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        marginTop: 10
-    },
-    text:{
-        color: cores.colorLinks,
+    text: {
+        color: "#011E83",
     }
 })
-
 
 export default Login

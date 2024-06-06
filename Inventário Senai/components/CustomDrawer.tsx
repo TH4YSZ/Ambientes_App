@@ -1,16 +1,14 @@
 import {View, Text, StyleSheet, Image} from 'react-native'
 import { DrawerItemList } from '@react-navigation/drawer'
-import { useColor } from '@temas/Temas';
+import { FontAwesome5 } from '@expo/vector-icons';
 
 export default function CustomDrawer(props: any) {
 
     return (
         <View style={styles.container}>
             <View style={styles.info}>
-                <Image source={require('@assets/perfil.jpg')} style={{ width: 100, height: 100, borderRadius: 50 }} />
                 <View style={styles.textContainer}>
-                    <Text style={styles.nome}>Flávio Josefo</Text>
-                    <Text style={styles.email}>flavio@email.com</Text>
+                    <Text style={styles.nome}>Olá, Coordenador</Text>
                 </View>
             </View>
             <DrawerItemList {...props} />
@@ -18,12 +16,11 @@ export default function CustomDrawer(props: any) {
     )
 }
 
-const cores = useColor()
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         paddingTop: 40,
-        backgroundColor: cores.bgPrimary,
+        backgroundColor: 'white',
     },
     info: {
         flexDirection: 'row',
@@ -38,12 +35,9 @@ const styles = StyleSheet.create({
         marginLeft: 20,
 
     },
-    email: {
-        color: cores.textColorSecundary
-    },
     nome: {
         fontWeight: 'bold',
         fontSize: 16,
-        color: cores.textColorPrimary
+        color: 'black'
     }
 });

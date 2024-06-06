@@ -23,7 +23,7 @@ export default function Layout() {
                 }}
             />
 
-            <Drawer.Screen name='Perfil'
+            <Drawer.Screen name='All Reservas'
                 options={{
                     headerShown: false,
                     drawerIcon: () => (
@@ -32,20 +32,21 @@ export default function Layout() {
                 }}
             />
 
-            <Drawer.Screen name='Sobre o App'
+
+            <Drawer.Screen name='Cad Ambiente'
                 options={{
                     headerShown: false,
                     drawerIcon: () => (
-                        <MaterialCommunityIcons name="information" size={24} color="#D9D9D9" />
+                        <Ionicons name="exit" size={24} color="#D9D9D9" />
                     ) 
                 }}
             />
 
-            <Drawer.Screen name='Suporte'
+            <Drawer.Screen name='Cadastro'
                 options={{
                     headerShown: false,
                     drawerIcon: () => (
-                        <Ionicons name="chatbox-ellipses" size={24} color="#D9D9D9" />
+                        <Ionicons name="exit" size={24} color="#D9D9D9" />
                     ) 
                 }}
             />
@@ -58,6 +59,8 @@ export default function Layout() {
                     ) 
                 }}
             />
+
+            
         </Drawer>
     );
 }
