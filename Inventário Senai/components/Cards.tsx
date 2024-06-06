@@ -25,7 +25,7 @@ const cards = ({ dadosAmbiente }: { dadosAmbiente: Ambiente[] }) => {
                 <Text style={styles.cardText}>Sala: {sala}</Text>
                 <View style={styles.buttonContainer}>
                     <TouchableOpacity style={styles.button}>
-                        <Link href="" asChild>
+                        <Link href="TabNav/DrawerNav/Home/ReservaAmbiente" asChild>
                             <Text style={styles.buttonText}>Reservar</Text>
                         </Link>
                     </TouchableOpacity>

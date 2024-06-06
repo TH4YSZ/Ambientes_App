@@ -15,6 +15,16 @@ export default function Layout() {
                 }}
             />
 
+            <Stack.Screen name="ReservaAmbiente" 
+                options={{
+        
+                    headerTitleAlign: 'center',
+                    headerTitle: 'Reservar Ambiente',
+                    headerStyle: { backgroundColor: "white" }
+                }}
+            />
+
+
         </Stack>
     );
 }

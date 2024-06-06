@@ -14,8 +14,6 @@ export default function layout(){
         options={{
           headerShown: false
       }}/> 
-
-
       
       
       <Stack.Screen name='TelasIniciais/Login'

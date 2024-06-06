@@ -12,7 +12,7 @@ export default function ResCoord() {
                     <Text style={styles.text}>Mesa: 1</Text>
                     <Text style={styles.text}>Status: Confirmado</Text>
                     <TouchableOpacity style={styles.button}>
-                        <Text style={styles.buttonText}>Cancelar</Text>
+                        <Text style={styles.buttonText}>Remover</Text>
                     </TouchableOpacity>
                 </View>
             </ScrollView>

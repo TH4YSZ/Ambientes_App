@@ -8,33 +8,33 @@ const MinhaReserva: React.FC = () => {
       <CardReserva
         title="Reserva 01"
         data="Data: 01/01/2021"
-        hora="Hora: 10:00"
+        hora="Hora:  10:00 - 11:10"
         local="Local: Laboratório 01"
-        responsavel='Carlos'
+        responsavel='Responsável:  Carlos'
       />
 
       <CardReserva
         title="Reserva 02"
         data="Data: 01/01/2021"
-        hora="Hora: 10:00"
+        hora="Hora:  10:00 - 11:10"
         local="Local: Laboratório 02"
-        responsavel='Thigas'
+        responsavel='Responsável:  Thigas'
       />
 
       <CardReserva
         title="Reserva 03"
         data="Data: 01/01/2021"
-        hora="Hora: 10:00"
+        hora="Hora:  10:00 - 11:10"
         local="Local: Laboratório 03"
-        responsavel='Thiegue'
+        responsavel='Responsável:  Thiegue'
       />
 
       <CardReserva
             title="Reserva 04"
-            data="Data: 01/01/2021"
-            hora="Hora: 10:00"
+            data="Data:  01/01/2021"
+            hora="Hora:  10:00 - 11:10"
             local="Local: Laboratório 04"
-            responsavel='Yuri'
+            responsavel='Responsável:  Yuri'
       />
     </ScrollView>
   );

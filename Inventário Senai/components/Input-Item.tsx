@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, StyleSheet, TextInputProps } from 'react-native';
-import { useColor } from '@temas/Temas';
 
 interface InputItemProps extends TextInputProps {
   label: string;
@@ -8,7 +7,6 @@ interface InputItemProps extends TextInputProps {
 }
 
 function InputItem({ label, descInicial, ...props }: InputItemProps) {
-  const cores = useColor()
   const [hover, setHover] = useState('#5D5C5C');
   const [textColor, setTextColor] = useState('#595959');
   const [desc, setDesc] = useState(descInicial || '')
@@ -45,14 +43,14 @@ function InputItem({ label, descInicial, ...props }: InputItemProps) {
       <TextInput
         style={styles.input}
         onFocus={() => {
-          setHover(cores.bgHover);
-          setTextColor(cores.bgHover);
+          setHover("ff0000");
+          setTextColor("ff0000");
         }}
         onBlur={() => {
           setHover('#5D5C5C');
           setTextColor('#000');
         }}
-        placeholderTextColor={cores.textColorSecundary}
+        placeholderTextColor={"#595959"}
         value={desc}
         onChangeText={text => setDesc(text)}
         {...props}

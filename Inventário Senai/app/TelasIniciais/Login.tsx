@@ -1,10 +1,9 @@
-import React from 'react';
 import { View, StyleSheet, ImageBackground } from 'react-native';
+import React from 'react';
 import Header from '@components/Header';
 import Input from '@components/Input';
 import Subtitulo from '@components/Subtitulo';
 import LinkBtn from '@components/LinkBtn';
-import { Link } from 'expo-router';
 
 function Login() {
     return (
