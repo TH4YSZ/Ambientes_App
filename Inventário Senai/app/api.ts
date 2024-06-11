@@ -1,63 +1,30 @@
-import { Axios } from "axios";
+import axios from 'axios';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const axios = require('axios');
+const URL = 'http://192.168.0.130:8000/api/';
 
-// interface dados_login {
-// 	username: string;
-// 	senha: string;
-// }
+// Função para o login
+export async function Logica_Login(username: string, senha: string) {
+    try {
+        const response = await axios.post(`${URL}token/`, {
+            username: username,
+            password: senha
+        });
 
-// interface dados_cadastro {
-//     username: string;
-//     sobrenome: string;
-//     senha: string;
-// }
+        const token = response.data.access;
+        
+        // Armazenar o token no AsyncStorage
+        await AsyncStorage.setItem('token', token);
 
-function Logica_Login() {
-	const options = {
-		method: 'POST',
-		url: 'http://127.0.0.1:8000/api/token/'
-	}
-}
-
-function Logica_Cadastro() {
-    const options = {
-        method: 'POST',
-        url: 'http://127.0.0.1:8000/api/usuario/'
+        console.log('Login realizado com sucesso:', response.data);
+        return response.data;
+    } catch (error) {
+        if (error.response) {
+            console.error('Erro ao fazer login:', error.response.data);
+            return { success: false, message: error.response.data };
+        } else {
+            console.error('Erro ao fazer login:', error.message);
+            return { success: false, message: error.message };
+        }
     }
 }
-
-function Logica_Cadastro_Ambiente() {
-    const criar_ambiente = {
-        method: 'POST',
-        url: 'http://127.0.0.1:8000/api/ambiente/'
-    }
-    const excluir_ambiente = {
-        method: 'DELETE',
-        url: 'http://127.0.0.1:8000/api/ambiente/<int:id>/'
-    }
-}
-
-function Logica_Reserva() {
-    const fazer_reserva = {
-        method: 'POST',
-        url: 'http://127.0.0.1:8000/api/reserva/'
-    }
-    const excluir_reserva = {
-        method: 'DELETE',
-        url: 'http://127.0.0.1:8000/api/reserva/<int:id>/'
-    }
-}
-
-function Dados_Senai() {
-    const options = {
-        method: 'GET',
-        url: 'http://127.0.0.1:8000/api/senai/'
-    }
-}
-
-Logica_Login()
-Logica_Cadastro()
-Logica_Cadastro_Ambiente()
-Logica_Reserva()
-Dados_Senai()

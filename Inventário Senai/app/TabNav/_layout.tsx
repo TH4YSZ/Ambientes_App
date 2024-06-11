@@ -2,22 +2,26 @@ import { Tabs } from "expo-router";
 import { MaterialIcons, FontAwesome } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { Link } from "expo-router";
+import { TouchableOpacity } from "react-native"
+
 
 export default function layout() {
     return (
         <Tabs screenOptions={{
-            tabBarShowLabel: false, 
+            tabBarShowLabel: false,
             tabBarStyle: { backgroundColor: "black" },
             tabBarIcon: ({ color, size }) => (
                 <FontAwesome name="list-alt" size={size} color={color} />
             ),
         }}>
-            <Tabs.Screen 
+            <Tabs.Screen
                 name="Ambiente"
                 options={{
                     headerRight: () => (
-                        <Link href="TabNav/Ambiente" asChild>   
-                            <Ionicons style={{ paddingRight: 10 }} name="refresh" size={24} color={'black'} />
+                        <Link href="TabNav/Ambiente">
+                            <TouchableOpacity>
+                                <Ionicons style={{ paddingRight: 10 }} name="refresh" size={24} color={'black'} />
+                            </TouchableOpacity>
                         </Link>
                     ),
                     headerTitleAlign: 'center',
@@ -26,7 +30,7 @@ export default function layout() {
                     headerStyle: { backgroundColor: "white" },
                 }}
             />
-            <Tabs.Screen 
+            <Tabs.Screen
                 name="DrawerNav"
                 options={{
                     headerShown: false,

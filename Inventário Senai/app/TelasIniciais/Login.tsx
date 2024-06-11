@@ -1,21 +1,49 @@
-import { View, StyleSheet, ImageBackground } from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
+import { View, StyleSheet, ImageBackground, Alert, Button } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import Header from '@components/Header';
 import Input from '@components/Input';
 import Subtitulo from '@components/Subtitulo';
-import LinkBtn from '@components/LinkBtn';
+import { Logica_Login } from '../api';
 
 function Login() {
+    const navigation = useNavigation();
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleLogin = async () => {
+        try {
+            const response = await Logica_Login(username, password);
+            console.log('Login bem-sucedido:', response);
+            // Navegue para a próxima tela após o login bem-sucedido
+            navigation.navigate('Ambientes');
+        } catch (error) {
+            console.error('Erro ao fazer login:', error);
+            Alert.alert('Erro', 'Nome de usuário ou senha inválidos. Tente novamente.');
+        }
+    };
+
     return (
         <ImageBackground source={require('@assets/bg.jpg')} style={styles.backgroundImage}>
             <View style={styles.overlay}>
-                <Header/>
+                <Header />
                 <View style={styles.formContainer}>
                     <Subtitulo subtitulo="Faça Login para Acessar o Sistema!" />
                     <View style={styles.form}>
-                        <Input label="Nome de Usuário" placeholder="Insira seu nome" />
-                        <Input label="Senha" placeholder="Insira sua senha" secureTextEntry={true} />
-                        <LinkBtn title="Entrar" href="TabNav" />
+                        <Input 
+                            label="Nome de Usuário" 
+                            placeholder="Insira seu nome" 
+                            value={username}
+                            onChangeText={setUsername}
+                        />
+                        <Input 
+                            label="Senha" 
+                            placeholder="Insira sua senha" 
+                            secureTextEntry={true} 
+                            value={password}
+                            onChangeText={setPassword}
+                        />
+                        <Button title="Entrar" onPress={handleLogin} />
                     </View>
                 </View>
             </View>
