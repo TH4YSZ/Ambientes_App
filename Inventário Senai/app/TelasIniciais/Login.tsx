@@ -1,25 +1,31 @@
 import React, { useState } from 'react';
 import { View, StyleSheet, ImageBackground, Alert, Button } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
 import Header from '@components/Header';
 import Input from '@components/Input';
 import Subtitulo from '@components/Subtitulo';
 import { Logica_Login } from '../api';
+import LinkBtn from '@components/LinkBtn';
+import { router } from 'expo-router';
 
 function Login() {
-    const navigation = useNavigation();
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
     const handleLogin = async () => {
         try {
             const response = await Logica_Login(username, password);
-            console.log('Login bem-sucedido:', response);
-            // Navegue para a próxima tela após o login bem-sucedido
-            navigation.navigate('Ambientes');
+            if (response.success) {
+                console.log('Login bem-sucedido:', response);
+                console.log(username, password);
+                router.navigate('TabNav/Ambiente')
+                
+            } else {
+                console.error('Erro ao fazer login:', response.message);
+                Alert.alert('Erro', 'Nome de usuário ou senha inválidos. Tente novamente.');
+            }
         } catch (error) {
-            console.error('Erro ao fazer login:', error);
-            Alert.alert('Erro', 'Nome de usuário ou senha inválidos. Tente novamente.');
+            console.error('Erro ao fazer login:', error.message);
+            Alert.alert('Erro', 'Ocorreu um erro ao tentar fazer login. Tente novamente mais tarde.');
         }
     };
 
@@ -43,7 +49,7 @@ function Login() {
                             value={password}
                             onChangeText={setPassword}
                         />
-                        <Button title="Entrar" onPress={handleLogin} />
+                        <Button title='Entrar'onPress={handleLogin}/>
                     </View>
                 </View>
             </View>
@@ -75,9 +81,6 @@ const styles = StyleSheet.create({
     form: {
         marginTop: 20,
     },
-    text: {
-        color: '#011E83',
-    }
 });
 
 export default Login;

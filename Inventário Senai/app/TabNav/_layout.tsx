@@ -20,7 +20,7 @@ export default function layout() {
                     headerRight: () => (
                         <Link href="TabNav/Ambiente">
                             <TouchableOpacity>
-                                <Ionicons style={{ paddingRight: 10 }} name="refresh" size={24} color={'black'} />
+                                <Ionicons style={{ paddingRight: 10 }} name="refresh" size={24} color="white"/>
                             </TouchableOpacity>
                         </Link>
                     ),
@@ -36,7 +36,7 @@ export default function layout() {
                     headerShown: false,
                     tabBarStyle: { backgroundColor: 'black' },
                     tabBarIcon: ({ color, size }) => (
-                        <MaterialIcons name="format-list-bulleted" size={size} color={color} />
+                        <MaterialIcons name="format-list-bulleted" size={size} color="white" />
                     ),
                     tabBarInactiveTintColor: '#fff',
                 }}

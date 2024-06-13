@@ -33,7 +33,7 @@ export default function Layout() {
                     drawerLabelStyle: { color: "black" },
                     drawerActiveBackgroundColor: "#FFCECE",
                     drawerIcon: ({ size, color }) => (
-                        <MaterialCommunityIcons name="account" size={size} color={color} />
+                        <MaterialCommunityIcons name="account" size={size} color="black" />
                     ),
                     headerTitle: "Todas as Reservas",
                     headerTitleAlign: 'center'
