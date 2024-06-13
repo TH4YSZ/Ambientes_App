@@ -1,40 +1,39 @@
-import React from 'react';
-import { StyleSheet, TouchableOpacity, ImageBackground, ScrollView } from 'react-native';
-import { Link } from 'expo-router';
-import { Ionicons } from '@expo/vector-icons';
+import React, { useEffect, useState } from 'react';
+import { View, ActivityIndicator, StyleSheet, ImageBackground } from 'react-native';
+import { Ambiente_List } from '../api';
 import Cards from '@components/Cards';
+import Pesquisar from '@components/SearchBar';
 
-type Ambiente = {
-    id: number;
-    titulo: string;
-    descricao: string;
-    sala: string;
-};
+const Ambientes = () => {
+    const [ambientes, setAmbientes] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-type Props = {
-    dadosAmbiente: Ambiente[];
-};
+    useEffect(() => {
+        const fetchData = async () => {
+            const data = await Ambiente_List();
+            if (data) {
+                setAmbientes(data);
+            } else {
+                console.error('Falha ao obter dados dos ambientes');
+            }
+            setLoading(false);
+        };
 
-const Ambientes = ({ dadosAmbiente }: Props) => {
-    return (
-        <ImageBackground source={require('@assets/engrenagens.jpg')} style={styles.backgroundImage}>
-            
-            <ScrollView contentContainerStyle={styles.scrollContainer}>
-                <Cards dadosAmbiente={[
-                    { id: 1, titulo: 'Sala 1', descricao: 'Sala de aula 1', sala: 'Sala 1' },
-                    { id: 2, titulo: 'Sala 2', descricao: 'Sala de aula 2', sala: 'Sala 2' },
-                    { id: 3, titulo: 'Sala 3', descricao: 'Sala de aula 3', sala: 'Sala 3' },
-                    { id: 4, titulo: 'Sala 4', descricao: 'Sala de aula 4', sala: 'Sala 4' },
-                    { id: 5, titulo: 'Sala 5', descricao: 'Sala de aula 5', sala: 'Sala 5' }
-                ]} />
-            </ScrollView>
-            <TouchableOpacity style={styles.addButton}>
-                <Link href="TabNav/DrawerNav/Cad Ambiente" asChild>
-                    <Ionicons name="add" size={30} color="white" />
-                </Link>
-            </TouchableOpacity>
-        </ImageBackground>
-    );
+        fetchData();
+    }, []);
+
+    if (loading) {
+        return (
+            <View style={styles.loaderContainer}>
+                <ActivityIndicator size="large" color="#0000ff" />
+            </View>
+        );
+    }
+
+    return <ImageBackground source={require('@assets/engrenagens.jpg')} style={styles.backgroundImage}>
+                <Cards dadosAmbiente={ambientes} />    
+                <Pesquisar />
+            </ImageBackground>;
 };
 
 const styles = StyleSheet.create({
@@ -43,17 +42,8 @@ const styles = StyleSheet.create({
         resizeMode: 'cover',
         justifyContent: 'center',
     },
-    scrollContainer: {
-        padding: 10,
-    },
-    addButton: {
-        position: 'absolute',
-        bottom: 30,
-        right: 30,
-        backgroundColor: 'red',
-        width: 50,
-        height: 50,
-        borderRadius: 25,
+    loaderContainer: {
+        flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
     },

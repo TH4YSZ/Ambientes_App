@@ -20,7 +20,7 @@ export default function layout() {
                     headerRight: () => (
                         <Link href="TabNav/Ambiente">
                             <TouchableOpacity>
-                                <Ionicons style={{ paddingRight: 10 }} name="refresh" size={24} color="white"/>
+                                <Ionicons style={{ paddingRight: 10 }} name="refresh" size={24} color="black"/>
                             </TouchableOpacity>
                         </Link>
                     ),

@@ -1,25 +1,12 @@
 import { View, ScrollView, ImageBackground, StyleSheet } from 'react-native';
-import React, { useEffect } from 'react';
+import React, { Component } from 'react';
+import CalendarPicker from 'react-native-calendar-picker';
 import Header from '@components/Header';
 import Input from '@components/Input';
 import LinkBtn from '@components/LinkBtn';
-import * as Calendar from 'expo-calendar';
 
-type Props = {};
 
-const Reserva_Ambiente = (props: Props) => {
-
-    useEffect(() => {
-        (async () => {
-            const { status } = await Calendar.requestCalendarPermissionsAsync();
-            if (status === 'granted') {
-                const calendars = await Calendar.getCalendarsAsync(Calendar.EntityTypes.EVENT);
-                console.log('Calendário:');
-                console.log({ calendars });
-            }
-        })();
-    }, []);
-
+const Reserva_Ambiente = () => {
     return (
         <ImageBackground source={require('@assets/bg cad.jpg')} style={styles.backgroundImage}>
             <ScrollView style={styles.container}>
@@ -33,11 +20,6 @@ const Reserva_Ambiente = (props: Props) => {
         </ImageBackground>
     );
 };
-
-async function getDefaultCalendarSource() {
-    const defaultCalendar = await Calendar.getDefaultCalendarAsync();
-    return defaultCalendar.source;
-}
 
 export default Reserva_Ambiente;
 

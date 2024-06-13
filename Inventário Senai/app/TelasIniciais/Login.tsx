@@ -15,8 +15,6 @@ function Login() {
         try {
             const response = await Logica_Login(username, password);
             if (response.success) {
-                console.log('Login bem-sucedido:', response);
-                console.log(username, password);
                 router.navigate('TabNav/Ambiente')
                 
             } else {

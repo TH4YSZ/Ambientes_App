@@ -1,51 +1,52 @@
-import React from 'react';
-import { StyleSheet, ScrollView } from 'react-native';
-import CardReserva from '@components/Card-reserva';
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, View, ActivityIndicator, ImageBackground } from 'react-native';
+import CardReservas from '@components/Card-reserva';
+import { ListarReservas } from '../../../api';
 
-const MinhaReserva: React.FC = () => {
+const MinhasReservas = () => {
+  const [reservas, setReservas] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await ListarReservas();
+      if (data) {
+        setReservas(data);
+      } else {
+        console.error('Falha ao obter dados das Reservas');
+      }
+      setLoading(false);
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return (
+      <View style={styles.loaderContainer}>
+        <ActivityIndicator size="large" color="#0000ff" />
+      </View>
+    );
+  }
+
   return (
-    <ScrollView style={styles.container}>
-      <CardReserva
-        title="Reserva 01"
-        data="Data: 01/01/2021"
-        hora="Hora:  10:00 - 11:10"
-        local="Local: Laboratório 01"
-        responsavel='Responsável:  Carlos'
-      />
-
-      <CardReserva
-        title="Reserva 02"
-        data="Data: 01/01/2021"
-        hora="Hora:  10:00 - 11:10"
-        local="Local: Laboratório 02"
-        responsavel='Responsável:  Thigas'
-      />
-
-      <CardReserva
-        title="Reserva 03"
-        data="Data: 01/01/2021"
-        hora="Hora:  10:00 - 11:10"
-        local="Local: Laboratório 03"
-        responsavel='Responsável:  Thiegue'
-      />
-
-      <CardReserva
-            title="Reserva 04"
-            data="Data:  01/01/2021"
-            hora="Hora:  10:00 - 11:10"
-            local="Local: Laboratório 04"
-            responsavel='Responsável:  Yuri'
-      />
-    </ScrollView>
+    <ImageBackground source={require('@assets/engrenagens.jpg')} style={styles.backgroundImage}>
+      <CardReservas dadosReserva={reservas} />
+    </ImageBackground>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
+  backgroundImage: {
     flex: 1,
-    backgroundColor: '#f0f0f0',
-    padding: 10,
+    resizeMode: 'cover',
+    justifyContent: 'center',
   },
+  loaderContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+},
 });
 
-export default MinhaReserva;
+export default MinhasReservas;

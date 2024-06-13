@@ -1,31 +1,51 @@
 import React from 'react';
 import { Link } from 'expo-router';
-import { StyleSheet, Text, View, TouchableOpacity, Button } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-native';
 
-type Props = {
+type Reservas = {
+  id: number;
   title: string;
   data: string;
   hora: string;
   local: string;
-  responsavel: string
+  responsavel: string;
 };
 
-const CardReserva: React.FC<Props> = ({ title, data, hora, local,responsavel }) => {
-  return (
-    <View style={styles.card}>
-      <View style={styles.cardContent}>
-        <Text style={styles.cardTitle}>{title}</Text>
-        <Text style={styles.cardText}>{data}</Text>
-        <Text style={styles.cardText}>{hora}</Text>
-        <Text style={styles.cardText}>{local}</Text>
-        <Text style={styles.cardText}>{responsavel}</Text>
-        <TouchableOpacity style={styles.deleteButton}>
-          <Link href="" asChild>
-            <Text style={styles.deleteButtonText}>Excluir</Text>
-          </Link>
-        </TouchableOpacity>
+type CardProps = {
+  id: number;
+  title: string;
+  data: string;
+  hora: string;
+  local: string;
+  responsavel: string;
+};
+const CardReservas = ({ dadosReserva }: { dadosReserva: Reservas[] }) => {
+  const CardReserva = ({ id, title, data, hora, local, responsavel }: CardProps) => {
+    return (
+      <View key={id} style={styles.card}>
+        <View style={styles.cardContent}>
+          <Text style={styles.cardTitle}>{title}</Text>
+          <Text style={styles.cardText}>Data:{data}</Text>
+          <Text style={styles.cardText}>Hora:{hora}</Text>
+          <Text style={styles.cardText}>Local:{local}</Text>
+          <Text style={styles.cardText}>Responsavel:{responsavel}</Text>
+          <TouchableOpacity style={styles.deleteButton}>
+            <Link href="" asChild>
+              <Text style={styles.deleteButtonText}>Excluir</Text>
+            </Link>
+          </TouchableOpacity>
+        </View>
       </View>
-    </View>
+    );
+  };
+  return (
+    <ScrollView>
+      <View>
+        {dadosReserva.map((item) => (
+          <CardReserva key={item.id} {...item}/>
+        ))}
+      </View>
+    </ScrollView>
   );
 };
 
@@ -34,10 +54,6 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     elevation: 3,
     backgroundColor: '#fff',
-    shadowOffset: { width: 1, height: 1 },
-    shadowColor: '#333',
-    shadowOpacity: 0.3,
-    shadowRadius: 2,
     marginHorizontal: 4,
     marginVertical: 6,
   },
@@ -47,12 +63,12 @@ const styles = StyleSheet.create({
   },
   cardTitle: {
     fontSize: 18,
-    fontWeight:'bold',
-    color: '#333',
+    fontWeight: 'bold',
+    color: 'lack',
   },
   cardText: {
     fontSize: 16,
-    color: '#333',
+    color: 'black',
   },
   deleteButton: {
     marginTop: 10,
@@ -62,12 +78,12 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     borderWidth: 1,
     borderColor: '#ff0000',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   deleteButtonText: {
     color: '#ff0000',
-    fontSize: 16
-  }
+    fontSize: 16,
+  },
 });
 
-export default CardReserva;
+export default CardReservas;

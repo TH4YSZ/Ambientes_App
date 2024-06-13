@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from 'react-native';
 import { Link } from 'expo-router';
+import FontAwesome from '@expo/vector-icons/FontAwesome';
+
 
 type Ambiente = {
     id: number;
@@ -16,7 +18,7 @@ type CardProps = {
     sala: string;
 };
 
-const cards = ({ dadosAmbiente }: { dadosAmbiente: Ambiente[] }) => {
+const Cards = ({ dadosAmbiente }: { dadosAmbiente: Ambiente[] }) => {
     const Card = ({ id, titulo, descricao, sala }: CardProps) => {
         return (
             <View key={id} style={styles.card}>
@@ -31,7 +33,7 @@ const cards = ({ dadosAmbiente }: { dadosAmbiente: Ambiente[] }) => {
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.deleteButton}>
                         <Link href="" asChild>
-                            <Text style={styles.deleteButtonText}>Excluir</Text>
+                            <FontAwesome name="trash-o" size={24} color="red" style={styles.deleteButtonText} />
                         </Link>
                     </TouchableOpacity>
                 </View>
@@ -51,9 +53,10 @@ const cards = ({ dadosAmbiente }: { dadosAmbiente: Ambiente[] }) => {
 };
 
 const styles = StyleSheet.create({
+
     container: {
         flexGrow: 1,
-        padding: 20,
+        padding: 10,
         alignItems: 'center',
     },
     cardContainer: {
@@ -65,7 +68,8 @@ const styles = StyleSheet.create({
     },
     card: {
         padding: 20,
-        width: 300,
+        width: 200,
+        height: 300,
         borderRadius: 20,
         backgroundColor: '#fafafa',
         borderWidth: 1,
@@ -103,6 +107,7 @@ const styles = StyleSheet.create({
     buttonText: {
         color: '#fff',
         fontSize: 16,
+        textAlign: 'center',
     },
     deleteButton: {
         marginTop: 10,
@@ -112,18 +117,21 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         borderWidth: 1,
         borderColor: '#ff0000',
+        width: 90,
     },
     deleteButtonText: {
         color: '#ff0000',
         fontSize: 16,
+        textAlign: 'center',
     },
     buttonContainer: {
         display: 'flex',
-        flexDirection: 'row',
         justifyContent: 'center',
+        alignContent: 'center',
+        alignItems: 'center',
         width: '100%',
-        gap: 15,
+        gap: 8,
     },
 });
 
-export default cards;
+export default Cards;

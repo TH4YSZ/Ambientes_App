@@ -1,8 +1,9 @@
 import { Text } from "react-native"
+import Login from "../../TelasIniciais/Login"
 
 function Sair(){
     return( 
-        <Text>Sair</Text>
+        <Login />
     )
 }
 export default Sair
