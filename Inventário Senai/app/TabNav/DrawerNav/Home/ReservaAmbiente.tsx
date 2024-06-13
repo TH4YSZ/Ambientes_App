@@ -1,6 +1,5 @@
 import { View, ScrollView, ImageBackground, StyleSheet } from 'react-native';
-import React, { Component } from 'react';
-import CalendarPicker from 'react-native-calendar-picker';
+import React from 'react';
 import Header from '@components/Header';
 import Input from '@components/Input';
 import LinkBtn from '@components/LinkBtn';

@@ -3,7 +3,7 @@ import { MaterialIcons, FontAwesome } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { Link } from "expo-router";
 import { TouchableOpacity } from "react-native"
-
+import { DrawerToggleButton } from "@react-navigation/drawer";
 
 export default function layout() {
     return (
@@ -24,6 +24,7 @@ export default function layout() {
                             </TouchableOpacity>
                         </Link>
                     ),
+
                     headerTitleAlign: 'center',
                     headerTitle: "Ambientes",
                     headerTintColor: "black",

@@ -1,55 +1,52 @@
-import React from 'react';
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { StyleSheet, View, ActivityIndicator, ImageBackground } from 'react-native';
+import CardReservas from '@components/Card-reserva';
+import { ListarReservas } from '../../api';
 
-export default function ResCoord() {
+const MinhasReservas = () => {
+  const [reservas, setReservas] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await ListarReservas();
+      if (data) {
+        setReservas(data);
+      } else {
+        console.error('Falha ao obter dados das Reservas');
+      }
+      setLoading(false);
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) {
     return (
-        <View style={styles.container}>
-            <ScrollView>
-                <View style={styles.card}>
-                    <Text style={styles.title}>Reserva</Text>
-                    <Text style={styles.text}>Data: 01/01/2021</Text>
-                    <Text style={styles.text}>Horário: 12:00</Text>
-                    <Text style={styles.text}>Mesa: 1</Text>
-                    <Text style={styles.text}>Status: Confirmado</Text>
-                    <TouchableOpacity style={styles.button}>
-                        <Text style={styles.buttonText}>Remover</Text>
-                    </TouchableOpacity>
-                </View>
-            </ScrollView>
-        </View>
+      <View style={styles.loaderContainer}>
+        <ActivityIndicator size="large" color="#0000ff" />
+      </View>
     );
-}
+  }
+
+  return (
+    <ImageBackground source={require('@assets/engrenagens.jpg')} style={styles.backgroundImage}>
+      <CardReservas dadosReserva={reservas} />
+    </ImageBackground>
+  );
+};
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#f0f0f0',
-        padding: 10,
-    },
-    card: {
-        backgroundColor: '#fff',
-        padding: 10,
-        margin: 10,
-        borderRadius: 5,
-    },
-    title: {
-        fontSize: 20,
-        fontWeight: 'bold',
-        color: '#333',
-    },
-    text: {
-        fontSize: 16,
-        color: '#333',
-    },
-    button: {
-        backgroundColor: '#f00',
-        padding: 10,
-        margin: 10,
-        borderRadius: 5,
-    },
-    buttonText: {
-        color: '#fff',
-        fontSize: 16,
-        textAlign: 'center',
-    },
+  backgroundImage: {
+    flex: 1,
+    resizeMode: 'cover',
+    justifyContent: 'center',
+  },
+  loaderContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+},
 });
+
+export default MinhasReservas;

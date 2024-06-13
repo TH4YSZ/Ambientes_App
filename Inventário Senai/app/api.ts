@@ -74,3 +74,29 @@ export async function ListarReservas() {
         return null;
     }
 }
+
+export async function registerUser(newUser: any) {
+    try {
+        const token = await AsyncStorage.getItem('token');
+        if (!token) {
+            throw new Error('Token não encontrado');
+        }
+        
+        newUser.cargo = 'Professor';
+
+        const response = await axios.post(`${URL}usuario/`, newUser);
+
+        if (response.status === 201) {
+            return { success: true, data: response.data };
+        } else {
+            return { success: false, message: 'Erro ao cadastrar usuário' };
+        }
+    } catch (error) {
+        if (error.response) {
+            return { success: false, message: error.response.data };
+        } else {
+            return { success: false, message: error.message };
+        }
+    }
+}
+

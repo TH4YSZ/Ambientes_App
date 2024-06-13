@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, ActivityIndicator, StyleSheet, ImageBackground } from 'react-native';
 import { Ambiente_List } from '../api';
 import Cards from '@components/Cards';
-import Pesquisar from '@components/SearchBar';
+
 
 const Ambientes = () => {
     const [ambientes, setAmbientes] = useState([]);
@@ -32,7 +32,6 @@ const Ambientes = () => {
 
     return <ImageBackground source={require('@assets/engrenagens.jpg')} style={styles.backgroundImage}>
                 <Cards dadosAmbiente={ambientes} />    
-                <Pesquisar />
             </ImageBackground>;
 };
 

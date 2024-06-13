@@ -4,31 +4,29 @@ import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-nati
 
 type Reservas = {
   id: number;
-  title: string;
   data: string;
-  hora: string;
-  local: string;
-  responsavel: string;
+  horario: string;
+  hora_final: string;
+  sala: string;
+  username: string;
 };
 
 type CardProps = {
   id: number;
-  title: string;
   data: string;
-  hora: string;
-  local: string;
-  responsavel: string;
+  horario: string;
+  hora_final: string;
+  username: string;
+ 
 };
 const CardReservas = ({ dadosReserva }: { dadosReserva: Reservas[] }) => {
-  const CardReserva = ({ id, title, data, hora, local, responsavel }: CardProps) => {
+  const CardReserva = ({ id, data, horario, hora_final, username }: CardProps) => {
     return (
       <View key={id} style={styles.card}>
         <View style={styles.cardContent}>
-          <Text style={styles.cardTitle}>{title}</Text>
-          <Text style={styles.cardText}>Data:{data}</Text>
-          <Text style={styles.cardText}>Hora:{hora}</Text>
-          <Text style={styles.cardText}>Local:{local}</Text>
-          <Text style={styles.cardText}>Responsavel:{responsavel}</Text>
+          <Text style={styles.cardText}>Data: {data}</Text>
+          <Text style={styles.cardText}>Hora: {horario} - {hora_final}</Text>
+          <Text style={styles.cardText}>Responsavel: {username}</Text>
           <TouchableOpacity style={styles.deleteButton}>
             <Link href="" asChild>
               <Text style={styles.deleteButtonText}>Excluir</Text>
@@ -39,8 +37,8 @@ const CardReservas = ({ dadosReserva }: { dadosReserva: Reservas[] }) => {
     );
   };
   return (
-    <ScrollView>
-      <View>
+    <ScrollView contentContainerStyle={styles.container}>
+      <View style={styles.cardContainer}>
         {dadosReserva.map((item) => (
           <CardReserva key={item.id} {...item}/>
         ))}
@@ -50,12 +48,24 @@ const CardReservas = ({ dadosReserva }: { dadosReserva: Reservas[] }) => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flexGrow: 1,
+    alignItems: 'center',
+},
+cardContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    alignItems: 'center',
+    display: 'flex',
+},
   card: {
     borderRadius: 6,
     elevation: 3,
     backgroundColor: '#fff',
     marginHorizontal: 4,
     marginVertical: 6,
+    width: 400,
   },
   cardContent: {
     marginHorizontal: 18,
