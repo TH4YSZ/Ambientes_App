@@ -17,7 +17,7 @@ export default function Layout() {
 
             <Stack.Screen name="ReservaAmbiente" 
                 options={{
-        
+                    headerLeft: () => <DrawerToggleButton tintColor = "black" />,
                     headerTitleAlign: 'center',
                     headerTitle: 'Reservar Ambiente',
                     headerStyle: { backgroundColor: "white" }

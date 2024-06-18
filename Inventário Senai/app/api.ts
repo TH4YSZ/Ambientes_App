@@ -2,7 +2,7 @@ import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Alert } from 'react-native';
 
-const URL = 'http://192.168.0.10:8000/api/';
+const URL = 'http://192.168.0.130:8000/api/';
 
 export async function Logica_Login(username, password) {
     try {
