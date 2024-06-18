@@ -1,6 +1,8 @@
 import React from 'react';
-import { Link } from 'expo-router';
-import { StyleSheet, Text, View, TouchableOpacity, ScrollView } from 'react-native';
+import { useRouter } from 'expo-router';
+import { StyleSheet, Text, View, ScrollView, Button, Alert } from 'react-native';
+import { excluir_Reserva } from '.././app/api';
+import { router } from 'expo-router';
 
 type Reservas = {
   id: number;
@@ -17,30 +19,46 @@ type CardProps = {
   horario: string;
   hora_final: string;
   username: string;
- 
+  onExcluirReserva: (id: number) => void;
 };
+
 const CardReservas = ({ dadosReserva }: { dadosReserva: Reservas[] }) => {
-  const CardReserva = ({ id, data, horario, hora_final, username }: CardProps) => {
+
+
+  const excluirReserva = async (id: number) => {
+    try {
+      const response = await excluir_Reserva(id);
+      if (response.success) {
+        Alert.alert('Sucesso', 'Reserva excluída com sucesso!');
+        router.push('TabNav/Ambiente');
+      } else {
+        console.error('Erro ao excluir reserva:', response.message);
+        Alert.alert('Erro', 'Erro ao excluir reserva. Tente novamente.');
+      }
+    } catch (error) {
+      console.error('Erro ao excluir reserva:', error.message);
+      Alert.alert('Erro', 'Ocorreu um erro ao tentar excluir a reserva. Tente novamente mais tarde.');
+    }
+  };
+
+  const CardReserva = ({ id, data, horario, hora_final, username, onExcluirReserva }: CardProps) => {
     return (
       <View key={id} style={styles.card}>
         <View style={styles.cardContent}>
           <Text style={styles.cardText}>Data: {data}</Text>
           <Text style={styles.cardText}>Hora: {horario} - {hora_final}</Text>
-          <Text style={styles.cardText}>Responsavel: {username}</Text>
-          <TouchableOpacity style={styles.deleteButton}>
-            <Link href="" asChild>
-              <Text style={styles.deleteButtonText}>Excluir</Text>
-            </Link>
-          </TouchableOpacity>
+          <Text style={styles.cardText}>Responsável: {username}</Text>
+          <Button onPress={() => onExcluirReserva(id)} title="Excluir"/>
         </View>
       </View>
     );
   };
+
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.cardContainer}>
         {dadosReserva.map((item) => (
-          <CardReserva key={item.id} {...item}/>
+          <CardReserva key={item.id} {...item} onExcluirReserva={excluirReserva} />
         ))}
       </View>
     </ScrollView>
@@ -51,14 +69,14 @@ const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
     alignItems: 'center',
-},
-cardContainer: {
+  },
+  cardContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
     alignItems: 'center',
     display: 'flex',
-},
+  },
   card: {
     borderRadius: 6,
     elevation: 3,
@@ -74,7 +92,7 @@ cardContainer: {
   cardTitle: {
     fontSize: 18,
     fontWeight: 'bold',
-    color: 'lack',
+    color: 'black',
   },
   cardText: {
     fontSize: 16,

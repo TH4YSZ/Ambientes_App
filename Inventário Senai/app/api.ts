@@ -1,30 +1,30 @@
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Alert } from 'react-native';
 
 const URL = 'http://192.168.0.10:8000/api/';
 
-export async function Logica_Login(username: string, password: string) {
+export async function Logica_Login(username, password) {
     try {
         const response = await axios.post(`${URL}token/`, {
             username: username,
             password: password
-        })
+        });
 
         const token = response.data.access;
-        
+
         // Armazenar o token no AsyncStorage
-        await AsyncStorage.setItem('token', token)
-        return { success: true, data: response.data }
+        await AsyncStorage.setItem('token', token);
+        return { success: true, data: response.data };
 
     } catch (error) {
         if (error.response) {
-            return { success: false, message: error.response.data }
+            return { success: false, message: error.response.data };
         } else {
-            return { success: false, message: error.message }
+            return { success: false, message: error.message };
         }
     }
 }
-
 
 export async function Ambiente_List() {
     try {
@@ -49,7 +49,6 @@ export async function Ambiente_List() {
         return null;
     }
 }
-
 
 export async function ListarReservas() {
     try {
@@ -77,11 +76,10 @@ export async function ListarReservas() {
 
 export async function registerUser(nome, sobrenome, username, senha, cargo) {
     try {
-        const token = await AsyncStorage.getItem('token')
+        const token = await AsyncStorage.getItem('token');
         if (!token) {
-            console.log('Token não encontrado')
+            console.log('Token não encontrado');
         }
-        
 
         const response = await axios.post(`${URL}usuario/`, {
             nome: nome,
@@ -89,7 +87,7 @@ export async function registerUser(nome, sobrenome, username, senha, cargo) {
             username: username,
             senha: senha,
             cargo: cargo
-        })
+        });
 
         if (response.status === 201) {
             return { success: true, data: response.data };
@@ -107,17 +105,16 @@ export async function registerUser(nome, sobrenome, username, senha, cargo) {
 
 export async function registrarAmbiente(titulo, descricao, sala) {
     try {
-        const token = await AsyncStorage.getItem('token')
+        const token = await AsyncStorage.getItem('token');
         if (!token) {
-            console.log('Token não encontrado')
+            console.log('Token não encontrado');
         }
-        
 
         const response = await axios.post(`${URL}ambiente/`, {
             titulo: titulo,
             descricao: descricao,
             sala: sala
-        })
+        });
 
         if (response.status === 201) {
             return { success: true, data: response.data };
@@ -132,6 +129,59 @@ export async function registrarAmbiente(titulo, descricao, sala) {
         }
     }
 }
+
+export async function excluir_Reserva(id) {
+    try {
+        const token = await AsyncStorage.getItem('token');
+        if (!token) {
+            console.log('Token não encontrado');
+            return { success: false, message: 'Token não encontrado' };
+        }
+
+        const response = await axios.delete(`${URL}reserva/${id}`, {
+            headers: { 'Authorization': `Bearer ${token}` }
+        });
+
+        if (response.status === 204) {
+            Alert.alert('Sucesso', 'Reserva excluída com sucesso');
+            return { success: true };
+        } else {
+            return { success: false, message: 'Erro ao deletar reserva' };
+        }
+    } catch (error) {
+        if (error.response) {
+            return { success: false, message: error.response.data };
+        } else {
+            return { success: false, message: error.message };
+        }
+    }
+}
+
+export async function excluirAmbiente(id) {
+    try {
+        const token = await AsyncStorage.getItem('token');
+        if (!token) {
+            console.log('Token não encontrado');
+            throw new Error('Token não encontrado');
+        }
+
+        const response = await axios.delete(`${URL}ambiente/${id}`, {
+            headers: { 'Authorization': `Bearer ${token}` }
+        });
+
+        if (response.status === 204) {
+            Alert.alert('Sucesso', 'Ambiente excluído com sucesso');
+            return { success: true };
+        } else {
+            throw new Error('Erro ao deletar ambiente');
+        }
+    } catch (error) {
+        console.error('Erro ao excluir ambiente:', error.message);
+        return { success: false, message: 'Erro ao deletar ambiente' }; // Corrigindo mensagem de erro
+    }
+}
+
+
 
 export async function ListarMinhasReservas() {
     try {
@@ -156,4 +206,3 @@ export async function ListarMinhasReservas() {
         return null;
     }
 }
-

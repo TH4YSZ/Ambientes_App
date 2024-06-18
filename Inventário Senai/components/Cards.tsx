@@ -1,8 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from 'react-native';
-import { Link } from 'expo-router';
+import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Alert } from 'react-native';
+import { Link, useRouter } from 'expo-router';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
-
+import { excluirAmbiente } from '.././app/api';  // Ajuste a importação aqui
+import { router } from 'expo-router';
 
 type Ambiente = {
     id: number;
@@ -16,10 +17,28 @@ type CardProps = {
     titulo: string;
     descricao: string;
     sala: string;
+    onExcluirAmbiente: (id: number) => void;
 };
 
 const Cards = ({ dadosAmbiente }: { dadosAmbiente: Ambiente[] }) => {
-    const Card = ({ id, titulo, descricao, sala }: CardProps) => {
+
+    const ExcluirAmbiente = async (id: number) => {
+        try {
+            const response = await excluirAmbiente(id);
+            if (response.success) {
+                Alert.alert('Sucesso', 'Ambiente excluído com sucesso!');
+                router.push('TabNav/Ambiente');
+            } else {
+                console.error('Erro ao excluir ambiente:', response.message);
+                Alert.alert('Erro', 'Erro ao excluir ambiente. Tente novamente.');
+            }
+        } catch (error) {
+            console.error('Erro ao excluir ambiente:', error.message);
+            Alert.alert('Erro', 'Ocorreu um erro ao tentar excluir o ambiente. Tente novamente mais tarde.');
+        }
+    };
+
+    const Card = ({ id, titulo, descricao, sala, onExcluirAmbiente }: CardProps) => {
         return (
             <View key={id} style={styles.card}>
                 <Text style={styles.cardTitle}>{titulo}</Text>
@@ -31,10 +50,11 @@ const Cards = ({ dadosAmbiente }: { dadosAmbiente: Ambiente[] }) => {
                             <Text style={styles.buttonText}>Reservar</Text>
                         </Link>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.deleteButton}>
-                        <Link href="" asChild>
-                            <FontAwesome name="trash-o" size={24} color="red" style={styles.deleteButtonText} />
-                        </Link>
+                    <TouchableOpacity
+                        style={styles.deleteButton}
+                        onPress={() => onExcluirAmbiente(id)}
+                    >
+                        <FontAwesome name="trash-o" size={24} color="red" style={styles.deleteButtonText} />
                     </TouchableOpacity>
                 </View>
             </View>
@@ -45,7 +65,7 @@ const Cards = ({ dadosAmbiente }: { dadosAmbiente: Ambiente[] }) => {
         <ScrollView contentContainerStyle={styles.container}>
             <View style={styles.cardContainer}>
                 {dadosAmbiente.map((item) => (
-                    <Card key={item.id} {...item} />
+                    <Card key={item.id} {...item} onExcluirAmbiente={ExcluirAmbiente} />
                 ))}
             </View>
         </ScrollView>
@@ -53,7 +73,6 @@ const Cards = ({ dadosAmbiente }: { dadosAmbiente: Ambiente[] }) => {
 };
 
 const styles = StyleSheet.create({
-
     container: {
         flexGrow: 1,
         padding: 10,
@@ -118,6 +137,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#ff0000',
         width: 90,
+        alignItems: 'center',
     },
     deleteButtonText: {
         color: '#ff0000',
