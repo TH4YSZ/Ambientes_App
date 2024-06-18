@@ -66,6 +66,7 @@ export default function Layout() {
                     headerTitle: "Cadastro de Usuário",
                     headerTitleAlign: 'center'
                 }}
+                
             />
 
             <Drawer.Screen

@@ -28,12 +28,12 @@ function Login() {
     };
 
     return (
-        <ImageBackground source={require('@assets/bg.jpg')} style={styles.backgroundImage}>
+        <ImageBackground source={require('@assets/wallpaper.jpg')} style={styles.backgroundImage}>
             <View style={styles.overlay}>
                 <Header />
                 <View style={styles.formContainer}>
                     <Subtitulo subtitulo="Faça Login para Acessar o Sistema!" />
-                    <View style={styles.form}>
+                    <View>
                         <Input 
                             label="Nome de Usuário" 
                             placeholder="Insira seu nome" 
@@ -47,7 +47,7 @@ function Login() {
                             value={password}
                             onChangeText={setPassword}
                         />
-                        <Button title='Entrar'onPress={handleLogin}/>
+                        <Button title='Entrar' onPress={handleLogin}/>
                     </View>
                 </View>
             </View>
@@ -74,11 +74,8 @@ const styles = StyleSheet.create({
         shadowOffset: { width: 0, height: 2 },
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
-        elevation: 5,
-    },
-    form: {
-        marginTop: 20,
-    },
+        elevation: 5
+    }
 });
 
 export default Login;

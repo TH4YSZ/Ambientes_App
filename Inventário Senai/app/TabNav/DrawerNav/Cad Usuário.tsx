@@ -12,23 +12,18 @@ function Cadastro(){
     const [sobrenome, setSobrenome] = useState('');
     const [username, setUsername] = useState('');
     const [senha, setSenha] = useState('');
+    const cargo = 'PROFESSOR'
 
     const Cad_User = async () => {
         try {
-
-            const newUser = {
-                nome,
-                sobrenome,
-                username,
-                senha
-            }
-            const response = await registerUser(newUser);
+            const response = await registerUser(nome, sobrenome, username, senha, cargo);
             if (response.success) {
-                router.navigate('Cad Usuário')
+                router.navigate('TabNav/Ambiente')
+                Alert.alert('Sucesso', 'Sucesso ao cadastrar usuário!');
                 
             } else {
                 console.error('Erro ao cadastrar um usuário:', response.message);
-                Alert.alert('Erro', 'Erro ao cadastrar usuário. Tente novamente.');
+                Alert.alert('Erro', 'Erro ao cadastrar usuársio. Tente novamente.');
             }
         } catch (error) {
             console.error('Erro ao cadastrar um usuário:', error.message);
